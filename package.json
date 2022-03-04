@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "name": "js-movie-twist",
+  "description": "A JavaScript website about vanilla js, ajax, node, express and movie twists!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agerard57/JS-movie-twist.git"
+  },
+  "keywords": [
+    "js;website;node;express;ajax;vanilla"
+  ],
+  "author": "agerard57",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agerard57/JS-movie-twist/issues"
+  },
+  "homepage": "https://github.com/agerard57/JS-movie-twist#readme"
+}
