@@ -1,13 +1,21 @@
 {
   "devDependencies": {
-    "bootstrap": "^5.1.3"
+    "bootstrap": "^5.1.3",
+    "eslint": "^8.10.0",
+    "eslint-plugin-import": "^2.25.4",
+    "js-unused-exports": "^1.2.1",
+    "markdownlint": "^0.25.1",
+    "prettier": "^2.5.1"
   },
   "name": "js-movie-twist",
   "description": "A JavaScript website about vanilla js, ajax, node, express and movie twists!",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check:eslint": "npx eslint --max-warnings 0 .",
+    "check:prettier": "npx prettier --check .",
+    "check:unused-exports": "npx js-unused-exports ./tsconfig.json",
+    "check": "npm run check:unused-exports && npm run check:prettier && npm run check:eslint"
   },
   "repository": {
     "type": "git",
@@ -17,6 +25,18 @@
     "js;website;node;express;ajax;vanilla"
   ],
   "author": "agerard57",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/agerard57/JS-movie-twist/issues"
