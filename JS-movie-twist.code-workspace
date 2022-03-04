@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "args": ["-l"]
+      }
+    },
+    "todohighlight.keywords": ["TODO", "XXX", "FIX"],
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "christian-kohler.npm-intellisense",
+      "davidanson.vscode-markdownlint",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ms-edgedevtools.vscode-edge-devtools", // Yes, I do use EDGE
+      "wayou.vscode-todo-highlight",
+      "zainchen.json"
+    ]
+  }
+}
