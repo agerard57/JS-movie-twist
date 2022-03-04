@@ -15,6 +15,12 @@ router.get("/", (_req, res) => {
 
 app.use("/", router);
 
+//Automatically redirect any invalid paths to home
+//TODO Redirect to custom error page
+app.get("*", (_req, res) => {
+  res.redirect("/");
+});
+
 //Put bootstrap in a static folder to link it in index.html
 app.use("/dist", express.static(__dirname + "/node_modules/bootstrap/dist"));
 
