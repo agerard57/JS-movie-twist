@@ -1,4 +1,4 @@
-# JS-movie-twist
+# JS_my-movie-database
 
 ## Downloading and running the project
 
@@ -11,7 +11,7 @@
 Theses steps makes the project launch itself automatically and only has to be
 done once
 
-- Go to the **"JS-movie-twist.code-workspace"** file and click on the
+- Go to the **"JS_my-movie-database.code-workspace"** file and click on the
   "Open Workspace" button
 - Once the workspace is open, open the Command Palette and write down
   "`>Tasks: Run Task`". Select the option and then select "`Run the project`"
