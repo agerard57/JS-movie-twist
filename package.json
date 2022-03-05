@@ -9,8 +9,8 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   },
-  "name": "js-movie-twist",
-  "description": "A JavaScript website about vanilla js, ajax, node, express and movie twists!",
+  "name": "js-my-movie-database",
+  "description": "A JavaScript website about vanilla js, ajax, node, express and movies!",
   "version": "1.0.0",
   "main": "index.js",
   "type":"module",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agerard57/JS-movie-twist.git"
+    "url": "git+https://github.com/agerard57/JS_my-movie-database.git"
   },
   "keywords": [
     "js;website;node;express;ajax;vanilla"
@@ -43,7 +43,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/agerard57/JS-movie-twist/issues"
+    "url": "https://github.com/agerard57/JS_my-movie-database/issues"
   },
-  "homepage": "https://github.com/agerard57/JS-movie-twist#readme"
+  "homepage": "https://github.com/agerard57/JS_my-movie-database#readme"
 }
