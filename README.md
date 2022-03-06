@@ -46,27 +46,34 @@ pass your new port as an environment variable as such "`PORT=xxxx npm start`".
 
 `node -v > .nvmrc`
 
-Eslint:
+eslint ^8.10.0:
 
 - `npm install eslint --save-dev`
+
+eslint-plugin-import ^2.25.4:
+
 - `npm install eslint-plugin-import --save-dev`
 
-Prettier:
+prettier ^2.5.1:
 
 - `npm install prettier --save-dev`
 
-Markdownlint:
+@trivago/prettier-plugin-sort-imports ^3.2.0:
 
-- `npm install markdownlint --save-dev`
+- `npm install @trivago/prettier-plugin-sort-imports --save-dev`
 
-Js-unused-exports:
+markdownlint-cli ^0.31.1:
+
+- `npm install markdownlint-cli --save-dev`
+
+js-unused-exports ^1.2.1:
 
 - `npm install js-unused-exports --save-dev`
 
-Nodemon:
+nodemon ^2.0.15:
 
 - `npm install nodemon --save-dev`
 
-Express:
+express ^4.17.3:
 
 - `npm install express --save-dev`
