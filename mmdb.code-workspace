@@ -2,7 +2,7 @@
   "folders": [
     {
       "name": "CLIENT",
-      "path": "client/"
+      "path": "src/"
     },
     {
       "name": "SERVER",
