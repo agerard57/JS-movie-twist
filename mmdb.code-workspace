@@ -1,7 +1,15 @@
 {
   "folders": [
     {
-      "name": "mmdb root",
+      "name": "CLIENT",
+      "path": "client/"
+    },
+    {
+      "name": "SERVER",
+      "path": "server/"
+    },
+    {
+      "name": "ROOT",
       "path": "."
     }
   ],
