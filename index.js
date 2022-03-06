@@ -45,9 +45,6 @@ app.get("*", (_req, res) => {
   res.redirect("/");
 });
 
-//Put bootstrap in a static folder to link it in index.html
-app.use("/dist", express.static(__dirname + "/node_modules/bootstrap/dist"));
-
 /* for (var i = 0, n = a.length; i < n; i++) {
   var e = a[i];
   console.log(e);

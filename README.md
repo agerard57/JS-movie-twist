@@ -63,10 +63,6 @@ Js-unused-exports:
 
 - `npm install js-unused-exports --save-dev`
 
-Bootstrap:
-
-- `npm install bootstrap --save-dev`
-
 Nodemon:
 
 - `npm install nodemon --save-dev`
