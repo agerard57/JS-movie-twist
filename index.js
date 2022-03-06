@@ -8,20 +8,19 @@ import { getRoutes } from "./src/loaders/routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-var app = express();
-var port = normalizePort(process.env.PORT);
+const app = express();
+const port = normalizePort(process.env.PORT);
 
 const server = app.listen(port, () => {
-  let port = server.address().port;
-  let url = `http://localhost:${port}`;
-  let /* Styling variables for console */
+  const port = server.address().port;
+  const url = `http://localhost:${port}`;
+  const /* Styling variables for console */
     resetStyles = "\x1b[0m",
     bold = "\x1b[1m",
     grey = "\x1b[2m",
     blue = "\x1b[34m";
   /* End variables */
-  let start = () => {
+  const start = () => {
     if (process.platform === "darwin") return "open";
     else if (process.platform === "win32") return "start";
     return "xdg-open";
