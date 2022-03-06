@@ -23,7 +23,7 @@
     "check:markdownlint": "npx markdownlint-cli .",
     "check:prettier": "npx prettier --check .",
     "check:unused-exports": "npx js-unused-exports ./tsconfig.json",
-    "check": "npm run check:markdownlint && npm run check:unused-exports && npm run check:prettier && npm run check:eslint"
+    "check": "npm run check:unused-exports && npm run check:prettier && npm run check:eslint"
   },
   "repository": {
     "type": "git",
