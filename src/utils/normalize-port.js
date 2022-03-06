@@ -10,5 +10,6 @@
 
 export const normalizePort = (val) => {
   let port = parseInt(val, 10);
-  port >= 0 ? port : 3000;
+  if (port >= 0) return port;
+  else return 3000;
 };
