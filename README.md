@@ -34,6 +34,8 @@ pass your new port as an environment variable as such "`PORT=xxxx npm start`".
 
 ## Commands used so far
 
+`node -v > .nvmrc`
+
 Eslint:
 
 - `npm install eslint --save-dev`
