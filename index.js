@@ -3,12 +3,12 @@ import express, { Router } from "express";
 import { fileURLToPath } from "url";
 import { exec } from "child_process";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+var __filename = fileURLToPath(import.meta.url);
+var __dirname = dirname(__filename);
 
 var app = express();
 var router = Router();
-var path = __dirname + "/src/";
+var clientPath = __dirname + "/client/";
 
 var server = app.listen(process.env.PORT || 3000, () => {
   let port = server.address().port;
@@ -34,7 +34,7 @@ var server = app.listen(process.env.PORT || 3000, () => {
 });
 
 router.get("/", (_req, res) => {
-  res.sendFile(path + "index.html");
+  res.sendFile(clientPath + "index.html");
 });
 
 app.use("/", router);
