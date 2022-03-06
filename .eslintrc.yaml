@@ -11,6 +11,8 @@ settings:
     node:
       extensions: [".js"]
       moduleDirectory: ["node_modules", "client/", "server/"]
+  import/ignore:
+    - */index.js
 rules:
   accessor-pairs: error
   array-callback-return:
@@ -37,7 +39,7 @@ rules:
   import/no-internal-modules:
     - error
     - allow:
-        - assets/*
+        - src/assets/*
   max-classes-per-file:
     - error
     - 1
