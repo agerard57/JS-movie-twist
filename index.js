@@ -1,18 +1,18 @@
 import { exec } from "child_process";
-import express, { Router } from "express";
+import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 import { normalizePort } from "./src/index.js";
+import { getRoutes } from "./src/loaders/routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 var app = express();
-var router = Router();
-var clientPath = __dirname + "/src/";
 var port = normalizePort(process.env.PORT);
-var server = app.listen(port, () => {
+
+const server = app.listen(port, () => {
   let port = server.address().port;
   let url = `http://localhost:${port}`;
   let /* Styling variables for console */
@@ -35,19 +35,4 @@ var server = app.listen(port, () => {
   );
 });
 
-router.get("/", (_req, res) => {
-  res.sendFile(clientPath + "index.html");
-});
-
-app.use("/", router);
-
-//Automatically redirect any invalid paths to home
-//TODO Redirect to custom error page
-app.get("*", (_req, res) => {
-  res.redirect("/");
-});
-
-/* for (var i = 0, n = a.length; i < n; i++) {
-  var e = a[i];
-  console.log(e);
-} */ //TODO Delete : For later usage
+getRoutes(__dirname, app);
