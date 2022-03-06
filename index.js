@@ -28,7 +28,6 @@ const server = app.listen(port, () => {
 
   exec(start() + " " + url);
 
-  // eslint-disable-next-line no-console
   console.log(
     `App now ${bold}running${resetStyles} on port ${blue}${port}${resetStyles}\n${grey}URL : ${url}${resetStyles}`
   );
