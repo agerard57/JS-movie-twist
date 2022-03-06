@@ -19,8 +19,11 @@
       "label": "Run the project",
       "command": "PORT=${input:port} npm run start",
       "type": "shell",
+      "promptOnClose": false,
       "problemMatcher": [],
       "presentation": {
+        "showReuseMessage": false,
+        "clear": true,
         "reveal": "always",
         "panel": "new"
       },
