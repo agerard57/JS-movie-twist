@@ -1,5 +1,15 @@
 # JS_my-movie-database
 
+## Table of Contents
+
+- [Downloading and running the project](#downloading-and-running-the-project)
+
+  - [Setup the automatic project launch](#setup-the-automatic-project-launch)
+
+  - [Manual project launch](#manual-project-launch)
+
+- [Commands used so far](#commands-used-so-far)
+
 ## Downloading and running the project
 
 - Clone / Download this project
