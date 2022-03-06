@@ -1,7 +1,8 @@
 {
   "version": "2.0.0",
   "tasks": [
-    {
+    /*  Old way to run npm start, but it couldn't ask for the port
+     {
       "label": "Run the project",
       "type": "npm",
       "script": "start",
@@ -13,6 +14,27 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
+    }, */
+    {
+      "label": "Run the project",
+      "command": "PORT=${input:port} npm run start",
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "port",
+      "description": "Enter your port",
+      "default": "3000",
+      "type": "promptString"
     }
   ]
 }
