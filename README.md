@@ -4,7 +4,7 @@
 
 - Clone / Download this project
 - Open _Visual Studio Code_
-- Open a CLI and install the dependencies with `npm i`
+- Open a CLI and install the dependencies with `npm run init`
 
 ### Setup the automatic project launch
 

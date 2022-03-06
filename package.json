@@ -13,8 +13,10 @@
   "description": "A JavaScript website about vanilla js, ajax, node, express and movies!",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
+    "clean": "rm -rf node_modules",
+    "init": "npm run clean && npm i",
     "start": "npx nodemon index.js",
     "check:eslint": "npx eslint --max-warnings 0 .",
     "check:prettier": "npx prettier --check .",
