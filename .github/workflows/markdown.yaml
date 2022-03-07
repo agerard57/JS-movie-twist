@@ -1,6 +1,8 @@
 name: Markdown
 
 on:
+  workflow_dispatch:
+
   push:
     paths:
       - .github/workflows/markdown.yaml

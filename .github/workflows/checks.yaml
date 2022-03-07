@@ -1,6 +1,8 @@
 name: Checks
 
 on:
+  workflow_dispatch:
+
   push:
     paths:
       - client/**
