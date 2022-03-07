@@ -16,7 +16,7 @@ export const getRoutes = (__dirname, app) => {
 
   // ........................ List Route ........................
   app.get("/list", (_req, res) => {
-    res.sendFile(clientPath + "/pages/list/list.html");
+    res.sendFile(clientPath + "/pages/list.html");
   });
 
   // ........................ Redirect Route ........................
