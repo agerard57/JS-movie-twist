@@ -10,9 +10,7 @@ settings:
   import/resolver:
     node:
       extensions: [".js"]
-      moduleDirectory: ["node_modules", "client/", "server/"]
-  import/ignore:
-    - */index.js
+      moduleDirectory: ["node_modules", "src/"]
 rules:
   accessor-pairs: error
   array-callback-return:
@@ -37,9 +35,7 @@ rules:
   grouped-accessor-pairs: error
   guard-for-in: error
   import/no-internal-modules:
-    - error
-    - allow:
-        - src/assets/*
+    - 0
   max-classes-per-file:
     - error
     - 1
