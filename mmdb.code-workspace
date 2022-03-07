@@ -30,7 +30,8 @@
     },
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "liveServer.settings.multiRootWorkspaceName": "CLIENT"
   },
   "extensions": {
     "recommendations": [
@@ -39,6 +40,7 @@
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
       "ms-edgedevtools.vscode-edge-devtools", // Yes, I do use EDGE
+      "ritwickdey.liveserver",
       "wayou.vscode-todo-highlight",
       "zainchen.json"
     ]
