@@ -1,28 +1,32 @@
-import express from "express";
+const express = require("express");
 
-export const getRoutes = (__dirname, app) => {
+module.exports = function routes(app) {
   let router = express.Router();
-  let clientPath = __dirname + "/src/";
+  let srcPath = __dirname.replace("loaders", "");
 
   // ........................ Assets route ........................
-  app.use("/assets", express.static(clientPath + "assets"));
+  app.use("/assets", express.static(srcPath + "assets"));
 
   // ........................ Home route ........................
   app.get("/", (_req, res) => {
-    res.sendFile(clientPath + "index.html");
+    res.sendFile(srcPath + "index.html");
   });
 
   app.use("/", router);
 
-  // ........................ List Route ........................
+  // ........................ List Routes ........................
   app.get("/list", (_req, res) => {
-    res.sendFile(clientPath + "/pages/list.html");
+    res.sendFile(srcPath + "pages/list/list.html");
   });
+  app.use(
+    "/assets/scripts/list/list.js",
+    express.static(srcPath + "pages/list/list.js")
+  );
 
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home
   //TODO Redirect to custom error page
-  app.get("*", (_req, res) => {
+  /*   app.get("*", (_req, res) => {
     res.redirect("/");
-  });
+  }); */
 };
