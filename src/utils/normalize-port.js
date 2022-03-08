@@ -8,7 +8,7 @@
  * @return {number}       Returns the normalized port number OR 3000
  */
 
-export const normalizePort = (val) => {
+module.exports = function normalizePort(val) {
   let port = parseInt(val, 10);
   if (port >= 0) return port;
   return 3000;

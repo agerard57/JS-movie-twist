@@ -14,7 +14,7 @@
   "description": "A JavaScript website about vanilla js, ajax, node, express and movies!",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "clean": "rm -rf node_modules",
     "init": "npm run clean && npm i",
