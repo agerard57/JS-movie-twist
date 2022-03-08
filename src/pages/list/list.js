@@ -4,7 +4,7 @@ btn.innerHTML = "Test";
 btnContainer.appendChild(btn);
 let newHeader = new Headers();
 
-const url = "http://localhost:3000/assets/data/movies.json";
+const url = "./assets/data/movies.json";
 const options = {
   method: "GET",
   headers: newHeader,
