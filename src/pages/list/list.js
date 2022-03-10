@@ -1,9 +1,6 @@
-const btnContainer = document.querySelector("#button");
-const btn = document.createElement("button");
-btn.innerHTML = "Test";
-btnContainer.appendChild(btn);
-let newHeader = new Headers();
+import { createCard } from "/assets/scripts/list/list.cards.js";
 
+const newHeader = new Headers();
 const url = "./assets/data/movies.json";
 const options = {
   method: "GET",
@@ -12,27 +9,14 @@ const options = {
   cache: "default",
 };
 
-btn.addEventListener("click", () => {
-  new Promise((resolve) => {
-    resolve(
-      fetch(url, options)
-        .then((res) => {
-          if (res.ok) return res.json();
-        })
-        .then((data) => {
-          data.forEach((element) => {
-            var img = document.createElement("img");
-            img.src = element.posterurl;
-
-            btnContainer.appendChild(img);
-          });
-        })
-    );
-  });
+new Promise((resolve) => {
+  resolve(
+    fetch(url, options)
+      .then((res) => {
+        if (res.ok) return res.json();
+      })
+      .then((data) => {
+        data[0].results.forEach(createCard);
+      })
+  );
 });
-
-var h = document.createElement("H1");
-var t = document.createTextNode("HAAAA");
-h.appendChild(t);
-
-document.body.appendChild(h);
