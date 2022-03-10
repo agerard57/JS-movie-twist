@@ -18,11 +18,16 @@ module.exports = function routes(app) {
   app.get("/list", (_req, res) => {
     res.sendFile(srcPath + "pages/list/list.html");
   });
+
   app.use(
     "/assets/scripts/list/list.js",
     express.static(srcPath + "pages/list/list.js")
   );
 
+  app.use(
+    "/assets/scripts/list/list.cards.js",
+    express.static(srcPath + "pages/list/list.cards.js")
+  );
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home
   //TODO Redirect to custom error page
