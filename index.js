@@ -22,7 +22,9 @@ app.listen(port, () => {
     return "xdg-open";
   };
 
-  exec(start() + " " + url);
+  // TODO REMOVE THE COMMENTS
+  /*   exec(start() + " " + url);
+   */
 
   // eslint-disable-next-line no-console
   console.log(
