@@ -16,7 +16,7 @@ new Promise((resolve) => {
         if (res.ok) return res.json();
       })
       .then((data) => {
-        data[0].results.forEach(createCard);
+        data.forEach(createCard);
       })
   );
 });
