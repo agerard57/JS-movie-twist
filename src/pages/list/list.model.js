@@ -1,14 +1,15 @@
-import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
 import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
+import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
+
 const cards = document.querySelector("#cards");
 
 export const createCard = (element) => {
   const truncateValue = 60;
   const shortenedStoryline =
-  element.overview.length > truncateValue
-  ? `${element.overview.substring(0, truncateValue)}...`
-  : element.overview;
-  
+    element.overview.length > truncateValue
+      ? `${element.overview.substring(0, truncateValue)}…`
+      : element.overview;
+
   const card = document.createElement("div");
   card.setAttribute("class", "card bg-dark text-white");
 
@@ -50,7 +51,8 @@ export const createCard = (element) => {
   // release date
   const releaseDate = document.createElement("p");
   releaseDate.setAttribute("class", "card-text");
-  releaseDate.innerText = "Release date: " + formatReleaseDate(element.release_date, "fullDate");
+  releaseDate.innerText =
+    "Release date: " + formatReleaseDate(element.release_date, "fullDate");
   cardOverlay.appendChild(releaseDate);
 
   cards.appendChild(card);
