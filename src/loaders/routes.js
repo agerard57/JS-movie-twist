@@ -45,6 +45,16 @@ module.exports = function routes(app) {
     express.static(srcPath + "pages/movie/movie.model.js")
   );
 
+  // ........................ Utils route ........................
+  app.use(
+    "/assets/scripts/utils/formatReleaseDate.js",
+    express.static(srcPath + "utils/formatReleaseDate.js")
+  );
+    app.use(
+    "/assets/scripts/utils/formatImageUrl.js",
+    express.static(srcPath + "utils/formatImageUrl.js")
+  );
+
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home
   //TODO Redirect to custom error page

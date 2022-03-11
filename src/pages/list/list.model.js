@@ -1,30 +1,18 @@
+import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
+import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 const cards = document.querySelector("#cards");
 
 export const createCard = (element) => {
-  const imgUrl = (size) => {
-    // size chart found here: https://www.themoviedb.org/talk/5aeaaf56c3a3682ddf0010de
-    // |  poster  | backdrop |
-    // | :------: | :------: |
-    // |    w92   |   w300   |
-    // |   w154   |   w780   |
-    // |   w185   |  w1280   |
-    // |   w342   |   w300   |
-    // |   w500   | original |
-    // |   w780   | -------- |
-    // | original | -------- |
-    const baseUrl = "https://image.tmdb.org/t/p/";
-    return baseUrl + size + element.backdrop_path;
-  };
   const truncateValue = 60;
   const shortenedStoryline =
-    element.overview.length > truncateValue
-      ? `${element.overview.substring(0, truncateValue)}...`
-      : element.overview;
-  const movieReleaseDate =
-    "Release date: " + element.release_date.replace(new RegExp("-", "g"), "/");
-  // card div
+  element.overview.length > truncateValue
+  ? `${element.overview.substring(0, truncateValue)}...`
+  : element.overview;
+  
   const card = document.createElement("div");
   card.setAttribute("class", "card bg-dark text-white");
+
+  // event listener
   card.addEventListener("click", () => {
     window.location.href = window.location.href.replace(
       "/list",
@@ -35,7 +23,7 @@ export const createCard = (element) => {
   // banner image
   const banner = document.createElement("img");
   banner.setAttribute("class", "card-img");
-  banner.src = imgUrl("w780");
+  banner.src = formatImageUrl(element.backdrop_path, "w780");
   banner.alt = `${element.title} banner`;
   card.appendChild(banner);
 
@@ -62,7 +50,7 @@ export const createCard = (element) => {
   // release date
   const releaseDate = document.createElement("p");
   releaseDate.setAttribute("class", "card-text");
-  releaseDate.innerText = movieReleaseDate;
+  releaseDate.innerText = "Release date: " + formatReleaseDate(element.release_date, "fullDate");
   cardOverlay.appendChild(releaseDate);
 
   cards.appendChild(card);
