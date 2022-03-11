@@ -25,9 +25,26 @@ module.exports = function routes(app) {
   );
 
   app.use(
-    "/assets/scripts/list/list.cards.js",
-    express.static(srcPath + "pages/list/list.cards.js")
+    "/assets/scripts/list/list.model.js",
+    express.static(srcPath + "pages/list/list.model.js")
   );
+
+  // ........................ Movie Routes ........................
+  app.get("/id/:id", (req, res) => {
+    let id = req.params.id;
+    res.sendFile(srcPath + "pages/movie/movie.html", { id: id });
+  });
+
+  app.use(
+    "/assets/scripts/movie/movie.js",
+    express.static(srcPath + "pages/movie/movie.js")
+  );
+
+  app.use(
+    "/assets/scripts/movie/movie.model.js",
+    express.static(srcPath + "pages/movie/movie.model.js")
+  );
+
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home
   //TODO Redirect to custom error page
