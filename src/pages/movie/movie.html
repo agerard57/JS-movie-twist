@@ -12,12 +12,35 @@
     />
     <title>MMDB - List</title>
   </head>
-
+  <!--TODO ADD POSTER AND BLUR BG-->
   <body>
+    <div id="bg-image"><div id="blur"></div></div>
     <section
-      class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+      id="movie-section"
+      class="p-5 text-center shadow-1-strong rounded mb-5 text-white"
     >
-      <div class="info-container fixed-bottom"></div>
+      <div id="info-container">
+        <img id="poster" class="img-rounded" alt="poster" />
+        <div id="titles">
+          <h3 id="title">${movie.title}</h3>
+          <h5 id="original-title">${movie.original_title}</h5>
+        </div>
+        <div id="metadata-container">
+          <span id="item-date"
+            >${formatReleaseDate(movie.release_date, "yearOnly")}</span
+          >
+          <span class="item-separator">|</span>
+          <span id="item-lang">${movie.original_language}</span>
+          <span class="item-separator">|</span>
+          <span id="item-avgnote">${movie.vote_average}</span>
+        </div>
+        <div id="genres-container">
+          <span>${movie.genre_ids[0]}</span>
+          <span class="item-separator">|</span>
+          <span>${movie.genre_ids[1]}</span>
+        </div>
+        <p id="overview">${movie.overview}</p>
+      </div>
     </section>
     <script type="module" src="/assets/scripts/movie/movie.js"></script>
   </body>
