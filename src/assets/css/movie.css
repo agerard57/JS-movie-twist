@@ -15,8 +15,7 @@ body {
 #info-container {
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -56%);
 }
 #metadata-container {
   margin: 30px 0;
@@ -28,6 +27,7 @@ body {
 
 #poster {
   padding-bottom: 40px;
+  width: 23vh;
 }
 
 #blur {

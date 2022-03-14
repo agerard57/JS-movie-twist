@@ -27,3 +27,10 @@ new Promise((resolve) => {
       })
   );
 });
+
+// Back button
+const backButton = document.querySelector("#back-button");
+backButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  history.back();
+});
