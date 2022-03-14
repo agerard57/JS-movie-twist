@@ -1,5 +1,6 @@
 import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
+import { getGenreName } from "/assets/scripts/utils/getGenreName.js";
 
 export const createMoviePage = (movie) => {
   // Poster
@@ -26,6 +27,14 @@ export const createMoviePage = (movie) => {
   const avgNote = document.querySelector("#item-avgnote");
   avgNote.innerHTML = movie.vote_average;
 
+  // Genres
+  const genres = document.querySelector("#genres-container");
+  var genresList = [];
+  movie.genre_ids.forEach((element) => genresList.push(getGenreName(element)));
+  Promise.all(genresList).then((values) => {
+    genres.innerHTML = values.join(" | ");
+  });
+
   // Overview
   const overview = document.querySelector("#overview");
   overview.innerHTML = movie.overview;
@@ -39,7 +48,9 @@ export const createMoviePage = (movie) => {
 };
 
 /* TODO list 
-  - Movie genres (loop and whatnot)
   - Average note in color
+  - Better html display by default
   - See what data has to be displayed next
-  - Make the whole thing responsive! */
+  - Make the whole thing responsive!
+  - Add indexes on forEach loops 
+*/
