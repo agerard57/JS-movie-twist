@@ -8,8 +8,8 @@
  */
 
 export const formatImageUrl = (date, format) => {
-    const baseUrl = "https://image.tmdb.org/t/p/";
-    return baseUrl + format + date;
+  const baseUrl = "https://image.tmdb.org/t/p/";
+  return baseUrl + format + date;
 };
 
 /*
