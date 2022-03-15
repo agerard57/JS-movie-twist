@@ -7,6 +7,14 @@ const options = {
   cache: "default",
 };
 
+/**
+ * Get the corresponding genre from the id.
+ *
+ * @module utils
+ * @param {string}           genreId  Is the genre id fed in by the "movies" database.
+ * @return {Promise}          Returns the genre name in a promise.
+ */
+
 export const getGenreName = (genreId) =>
   new Promise((resolve) => {
     resolve(
