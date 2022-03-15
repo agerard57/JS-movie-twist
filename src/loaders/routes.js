@@ -1,28 +1,70 @@
-import express from "express";
+const express = require("express");
 
-export const getRoutes = (__dirname, app) => {
+module.exports = function routes(app) {
   let router = express.Router();
-  let clientPath = __dirname + "/src/";
+  let srcPath = __dirname.replace("loaders", "");
 
   // ........................ Assets route ........................
-  app.use("/assets", express.static(clientPath + "assets"));
+  app.use("/assets", express.static(srcPath + "assets"));
 
   // ........................ Home route ........................
   app.get("/", (_req, res) => {
-    res.sendFile(clientPath + "index.html");
+    res.sendFile(srcPath + "index.html");
   });
 
   app.use("/", router);
 
-  // ........................ List Route ........................
+  // ........................ List Routes ........................
   app.get("/list", (_req, res) => {
-    res.sendFile(clientPath + "/pages/list/list.html");
+    res.sendFile(srcPath + "pages/list/list.html");
   });
+
+  app.use(
+    "/assets/scripts/list/list.js",
+    express.static(srcPath + "pages/list/list.js")
+  );
+
+  app.use(
+    "/assets/scripts/list/list.model.js",
+    express.static(srcPath + "pages/list/list.model.js")
+  );
+
+  // ........................ Movie Routes ........................
+  app.get("/id/:id", (req, res) => {
+    let id = req.params.id;
+    res.sendFile(srcPath + "pages/movie/movie.html", { id: id });
+  });
+
+  app.use(
+    "/assets/scripts/movie/movie.js",
+    express.static(srcPath + "pages/movie/movie.js")
+  );
+
+  app.use(
+    "/assets/scripts/movie/movie.model.js",
+    express.static(srcPath + "pages/movie/movie.model.js")
+  );
+
+  // ........................ Utils route ........................
+  app.use(
+    "/assets/scripts/utils/formatReleaseDate.js",
+    express.static(srcPath + "utils/formatReleaseDate.js")
+  );
+
+  app.use(
+    "/assets/scripts/utils/formatImageUrl.js",
+    express.static(srcPath + "utils/formatImageUrl.js")
+  );
+
+  app.use(
+    "/assets/scripts/utils/getGenreName.js",
+    express.static(srcPath + "utils/getGenreName.js")
+  );
 
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home
   //TODO Redirect to custom error page
-  app.get("*", (_req, res) => {
+  /*   app.get("*", (_req, res) => {
     res.redirect("/");
-  });
+  }); */
 };

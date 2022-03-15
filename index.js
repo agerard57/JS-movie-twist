@@ -1,25 +1,21 @@
-import { exec } from "child_process";
-import express from "express";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+const exec = require("child_process").exec;
+const express = require("express");
 
-import { normalizePort } from "./src/index.js";
-import { getRoutes } from "./src/loaders/routes.js";
+const normalizePort = require("./src/utils/normalize-port");
+const getRoutes = require("./src/loaders/routes");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 const app = express();
 const port = normalizePort(process.env.PORT);
 
-const server = app.listen(port, () => {
-  const port = server.address().port;
-  const url = `http://localhost:${port}`;
-  const /* Styling variables for console */
+app.listen(port, () => {
+  let url = `http://localhost:${port}`;
+  let /* Styling variables for console */
     resetStyles = "\x1b[0m",
     bold = "\x1b[1m",
     grey = "\x1b[2m",
     blue = "\x1b[34m";
   /* End variables */
+
   const start = () => {
     if (process.platform === "darwin") return "open";
     else if (process.platform === "win32") return "start";
@@ -34,4 +30,4 @@ const server = app.listen(port, () => {
   );
 });
 
-getRoutes(__dirname, app);
+getRoutes(app);

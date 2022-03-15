@@ -1,10 +1,6 @@
 {
   "folders": [
     {
-      "name": "CLIENT",
-      "path": "src/"
-    },
-    {
       "name": "ROOT",
       "path": "."
     }

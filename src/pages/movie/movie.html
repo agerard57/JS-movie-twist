@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/movie.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>MMDB - List</title>
+  </head>
+  <!--TODO ADD POSTER AND BLUR BG-->
+  <body>
+    <div id="bg-image"><div id="blur"></div></div>
+    <section
+      id="movie-section"
+      class="p-5 text-center shadow-1-strong rounded mb-5 text-white"
+    >
+      <div id="info-container">
+        <img id="poster" class="img-rounded" alt="poster" />
+        <div id="titles">
+          <h3 id="title">${movie.title}</h3>
+          <h5 id="original-title">${movie.original_title}</h5>
+        </div>
+        <div id="metadata-container">
+          <span id="item-date"
+            >${formatReleaseDate(movie.release_date, "yearOnly")}</span
+          >
+          <span class="item-separator">|</span>
+          <span id="item-lang">${movie.original_language}</span>
+          <span class="item-separator">|</span>
+          <span id="item-avgnote">${movie.vote_average}</span>
+        </div>
+        <span id="genres-container">${movie.genre_ids[0]}</span>
+        <p id="overview">${movie.overview}</p>
+        <button id="back-button" type="button" class="btn btn-outline-light">
+          Go back
+        </button>
+      </div>
+    </section>
+    <script type="module" src="/assets/scripts/movie/movie.js"></script>
+  </body>
+</html>
