@@ -7,6 +7,17 @@ module.exports = function routes(app) {
   // ........................ Assets route ........................
   app.use("/assets", express.static(srcPath + "assets"));
 
+  // ........................ Navbar menu route ........................
+  app.use(
+    "/assets/scripts/navbar/navbar.js",
+    express.static(srcPath + "core/navbar/navbar.js")
+  );
+
+  app.use(
+    "/assets/scripts/navbar/genresList.js",
+    express.static(srcPath + "core/navbar/genresList.js")
+  );
+
   // ........................ Home route ........................
   app.get("/", (_req, res) => {
     res.sendFile(srcPath + "index.html");
