@@ -8,9 +8,8 @@
  */
 
 export const formatReleaseDate = (date, format) => {
-    if (format === "fullDate") 
-        return date.replace(new RegExp("-", "g"), "/"); // Will look like "yyyy-mm-dd"
-     else if (format === "yearOnly") 
-        return date.substring(0, 4); // Will loke like "yyyy"
-      return date 
+  if (format === "fullDate") return date.replace(new RegExp("-", "g"), "/");
+  // Will look like "yyyy-mm-dd"
+  else if (format === "yearOnly") return date.substring(0, 4); // Will loke like "yyyy"
+  return date;
 };
