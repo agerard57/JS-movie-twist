@@ -7,15 +7,26 @@ module.exports = function routes(app) {
   // ........................ Assets route ........................
   app.use("/assets", express.static(srcPath + "assets"));
 
-  // ........................ Navbar menu route ........................
+  // ........................ Genre list route ........................
+  app.get("/genre/:id", (req, res) => {
+    let id = req.params.id;
+    res.sendFile(srcPath + "pages/genre/genre.html", { id: id });
+  });
+
   app.use(
-    "/assets/scripts/navbar/navbar.js",
-    express.static(srcPath + "core/navbar/navbar.js")
+    "/assets/scripts/genre/genre.js",
+    express.static(srcPath + "pages/genre/genre.js")
   );
 
   app.use(
-    "/assets/scripts/navbar/genresList.js",
-    express.static(srcPath + "core/navbar/genresList.js")
+    "/assets/scripts/genre/genre.model.js",
+    express.static(srcPath + "pages/genre/genre.model.js")
+  );
+
+  // ........................ Navbar menu route ........................
+  app.use(
+    "/assets/scripts/navbar.js",
+    express.static(srcPath + "core/navbar.js")
   );
 
   // ........................ Home route ........................
