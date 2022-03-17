@@ -1,0 +1,10 @@
+html {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#page-title {
+  padding: 10vh 0 3vh 0;
+}
