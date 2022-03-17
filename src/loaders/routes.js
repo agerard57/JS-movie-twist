@@ -29,6 +29,21 @@ module.exports = function routes(app) {
     express.static(srcPath + "core/navbar.js")
   );
 
+  // ........................ Signup / login route ........................
+  app.get("/login", (_req, res) => {
+    res.sendFile(srcPath + "pages/login/login.html");
+  });
+
+  app.use(
+    "/assets/scripts/login/signup.js",
+    express.static(srcPath + "pages/login/signup.js")
+  );
+
+  app.use(
+    "/assets/scripts/login/login.js",
+    express.static(srcPath + "pages/login/login.js")
+  );
+
   // ........................ Home route ........................
   app.get("/", (_req, res) => {
     res.sendFile(srcPath + "index.html");

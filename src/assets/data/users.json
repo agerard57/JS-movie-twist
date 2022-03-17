@@ -1,0 +1,16 @@
+[
+  {
+    "username": "agerard57",
+    "email": "test@agerard.dev",
+    "password": "test",
+    "city": "Metz",
+    "type": "admin"
+  },
+  {
+    "username": "hale",
+    "email": "nhale@hotmail.fr",
+    "password": "test2",
+    "city": "New York",
+    "type": "user"
+  }
+]
