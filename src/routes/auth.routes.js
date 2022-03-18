@@ -16,4 +16,6 @@ module.exports = function (app, express, srcPath) {
     [verifySignUp.checkDuplicateUsername],
     controller.signup
   );
+
+  app.post("/auth/login", controller.login);
 };
