@@ -2,14 +2,15 @@ const exec = require("child_process").exec;
 const express = require("express");
 const mongoose = require("mongoose");
 
+const dbConfig = require("./src/config/db.config");
+const getRoutes = require("./src/routes");
 const normalizePort = require("./src/utils/normalize-port");
-const getRoutes = require("./src/loaders/routes");
 
 const app = express();
 const port = normalizePort(process.env.PORT);
 
 const promise = mongoose.connect(
-  "mongodb+srv://github:xxxxxxxx@xxxxxxxx/mmdb",
+  `mongodb+srv://${dbConfig.USER}:${dbConfig.PWD}@${dbConfig.HOST}/${dbConfig.DB}`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
