@@ -14,12 +14,6 @@ const setItems = (storage) => {
  */
 
 export const storeUserData = () => {
-  console.log("deez");
-  if (remembers === "true") {
-    setItems(localStorage);
-    console.log("nuts1");
-  } else if (remembers === "false") {
-    setItems(sessionStorage);
-    console.log("nuts2");
-  }
+  if (remembers === "true") setItems(localStorage);
+  else if (remembers === "false") setItems(sessionStorage);
 };
