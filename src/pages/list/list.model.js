@@ -29,7 +29,7 @@ export const createCard = (element) => {
   const cardOverlay = document.createElement("div");
   cardOverlay.setAttribute(
     "class",
-    "card-img-overlay h-100 d-flex flex-column justify-content-end deez"
+    "card-img-overlay h-100 d-flex flex-column justify-content-end fade"
   );
   card.appendChild(cardOverlay);
 
