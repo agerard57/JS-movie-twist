@@ -5,7 +5,7 @@ const setItems = (storage) => {
   storage.setItem("city", qs.get("city"));
   storage.setItem("type", qs.get("type"));
 };
-
+const refresh = () => (window.location.href = "/");
 /**
  * Stores the user's username, it's city and the type of his account.
  *
@@ -14,6 +14,11 @@ const setItems = (storage) => {
  */
 
 export const storeUserData = () => {
-  if (remembers === "true") setItems(localStorage);
-  else if (remembers === "false") setItems(sessionStorage);
+  if (remembers === "true") {
+    setItems(localStorage);
+    refresh();
+  } else if (remembers === "false") {
+    setItems(sessionStorage);
+    refresh();
+  }
 };
