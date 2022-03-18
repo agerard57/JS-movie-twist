@@ -15,7 +15,7 @@ var movieSchema = mongoose.Schema({
   vote_count: { type: Number },
 });
 
-movieSchema.index({ slug: 1, userid: 1 }, { unique: true });
+movieSchema.index({ id: 1 }, { unique: true });
 
 var MoviesModel = mongoose.model("movies", movieSchema);
 

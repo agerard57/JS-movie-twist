@@ -5,6 +5,7 @@ const userSchema = mongoose.Schema({
   username: { type: String, required: true, unique: "true" },
   password: { type: String, required: true },
   city: String,
+  type: { type: String, default: "user" },
 });
 
 userSchema.index({ username: 1 }, { unique: true });

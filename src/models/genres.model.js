@@ -5,7 +5,7 @@ var genreSchema = mongoose.Schema({
   name: { type: String, required: true },
 });
 
-genreSchema.index({ slug: 1, userid: 1 }, { unique: true });
+genreSchema.index({ id: 1 }, { unique: true });
 
 var GenresModel = mongoose.model("genres", genreSchema);
 
