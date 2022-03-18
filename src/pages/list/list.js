@@ -1,7 +1,7 @@
 import { createCard } from "/assets/scripts/list/list.model.js";
 
 const newHeader = new Headers();
-const url = "data/movies";
+const url = "/data/movies";
 /* JSON Method
 const url = "/assets/data/movies.json"; */
 const options = {

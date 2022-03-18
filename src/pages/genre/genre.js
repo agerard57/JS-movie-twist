@@ -3,7 +3,7 @@ import { getGenreName } from "/assets/scripts/utils/getGenreName.js";
 
 const pageTitle = document.querySelector("#page-title");
 const newHeader = new Headers();
-const url = "data/movies";
+const url = "/data/movies";
 /* JSON Method
 const url = "/assets/data/movies.json"; */
 const options = {
