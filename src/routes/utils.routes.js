@@ -15,7 +15,7 @@ module.exports = function (app, express, srcPath) {
   );
 
   app.use(
-    "/assets/scripts/utils/storeUserData.js",
-    express.static(srcPath + "utils/storeUserData.js")
+    "/assets/scripts/utils/userDataStorage.js",
+    express.static(srcPath + "utils/userDataStorage.js")
   );
 };
