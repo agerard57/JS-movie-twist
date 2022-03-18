@@ -1,5 +1,5 @@
-const verifySignUp = require("../middlewares/verifySignUp");
 const controller = require("../controllers/auth.controller");
+const verifySignUp = require("../middlewares/verifySignUp");
 
 module.exports = function (app, express, srcPath) {
   app.get("/login", (_req, res) => {
@@ -7,7 +7,7 @@ module.exports = function (app, express, srcPath) {
   });
 
   app.use(
-    "/assets/scripts/login/signup.js",
+    "/assets/scripts/auth/auth.js",
     express.static(srcPath + "pages/auth/auth.js")
   );
 
