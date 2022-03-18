@@ -15,7 +15,9 @@ body {
 #info-container {
   position: fixed;
   top: 50%;
-  transform: translate(0, -56%);
+  left: 0;
+  right: 0;
+  transform: translate(0, -54%);
 }
 #metadata-container {
   margin: 30px 0;
