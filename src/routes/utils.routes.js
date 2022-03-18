@@ -13,4 +13,9 @@ module.exports = function (app, express, srcPath) {
     "/assets/scripts/utils/getGenreName.js",
     express.static(srcPath + "utils/getGenreName.js")
   );
+
+  app.use(
+    "/assets/scripts/utils/storeUserData.js",
+    express.static(srcPath + "utils/storeUserData.js")
+  );
 };
