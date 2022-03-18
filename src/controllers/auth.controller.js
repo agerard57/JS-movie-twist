@@ -6,7 +6,6 @@ exports.signup = (req, res) => {
     username: req.body.username,
     password: bcrypt.hashSync(req.body.password1, 8),
     city: req.body.city,
-    type: "user",
   });
 
   user.save((err, user) => {
@@ -14,13 +13,14 @@ exports.signup = (req, res) => {
       res.status(500).send({ message: err });
       return;
     }
-    res.send({ message: "User was registered successfully!" });
+    // TODO Add redirection page once user created (or even toasts)
+    res.redirect("/login");
   });
 };
 
-exports.signin = (req, res) => {
+exports.login = (req, res) => {
   UsersModel.findOne({
-    username: req.body.username,
+    username: req.body.inputLoginUsername,
   }).exec((err, user) => {
     if (err) {
       res.status(500).send({ message: err });
@@ -28,19 +28,25 @@ exports.signin = (req, res) => {
     }
     if (!user) return res.status(404).send({ message: "User Not found." });
 
-    var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+    var passwordIsValid = bcrypt.compareSync(
+      req.body.inputLoginPassword,
+      user.password
+    );
     if (!passwordIsValid)
       return res.status(401).send({
-        accessToken: null,
         message: "Invalid Password!",
       });
 
-    res.status(200).send({
-      id: user._id,
-      username: user.username,
-      email: user.email,
-      city: user.city,
-      roles: user.role,
-    });
+    var username = encodeURIComponent(user.username);
+    var city = encodeURIComponent(user.city);
+    var type = encodeURIComponent(user.type);
+    const remember =
+      req.body.remember === "remember-me"
+        ? encodeURIComponent("true")
+        : encodeURIComponent("false");
+
+    res.redirect(
+      `/?user=${username}&city=${city}&type=${type}&remember=${remember}`
+    );
   });
 };
