@@ -1,7 +1,9 @@
 import { createMoviePage } from "/assets/scripts/movie/movie.model.js";
 
 const newHeader = new Headers();
-const url = "/assets/data/movies.json";
+const url = "data/movies";
+/* JSON Method
+const url = "/assets/data/movies.json"; */
 const options = {
   method: "GET",
   headers: newHeader,

@@ -1,4 +1,7 @@
 const express = require("express");
+const GenresModel = require("../models/GenresModel");
+const MoviesModel = require("../models/MoviesModel");
+const UsersModel = require("../models/UsersModel");
 
 module.exports = function routes(app) {
   let router = express.Router();
@@ -97,6 +100,23 @@ module.exports = function routes(app) {
     "/assets/scripts/utils/getGenreName.js",
     express.static(srcPath + "utils/getGenreName.js")
   );
+
+  // ........................ Models route ........................
+  router.get("/data/movies", async (req, res) => {
+    const posts = await MoviesModel.find();
+    res.send(posts);
+  });
+
+  router.get("/data/genres", async (req, res) => {
+    const posts = await GenresModel.find();
+    res.send(posts);
+  });
+
+  router.get("/data/users", async (req, res) => {
+    const posts = await UsersModel.find();
+    res.send(posts);
+  });
+  //TODO Clean models
 
   // ........................ Redirect Route ........................
   //Automatically redirect any invalid paths to home

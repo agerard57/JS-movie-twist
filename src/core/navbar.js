@@ -1,5 +1,7 @@
 const newHeader = new Headers();
-const url = "/assets/data/genres.json";
+const url = "/data/genres";
+/* JSON Method
+const url = "/assets/data/genres.json"; */
 const options = {
   method: "GET",
   headers: newHeader,
