@@ -10,17 +10,12 @@ module.exports = function routes(app) {
 
   require("./auth.routes")(app, express, srcPath);
   require("./genre.routes")(app, express, srcPath);
+  require("./home.routes")(app, express, router, srcPath);
   require("./list.routes")(app, express, srcPath);
   require("./models.routes")(router);
   require("./movie.routes")(app, express, srcPath);
   require("./navbar.routes")(app, express, srcPath);
   require("./utils.routes")(app, express, srcPath);
-
-  app.use("/", router);
-
-  app.get("/", (_req, res) => {
-    res.sendFile(srcPath + "index.html");
-  });
 
   app.get("*", (_req, res) => {
     res.redirect("/");
