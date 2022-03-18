@@ -96,19 +96,22 @@
         class="form-control"
         placeholder="* Username"
         required=""
+        name="inputLoginUsername"
         autofocus=""
       />
-      <label for="inputPassword" class="sr-only">Password</label>
+      <label for="inputLoginPassword" class="sr-only">Password</label>
       <input
         type="password"
-        id="inputPassword"
+        name="inputLoginPassword"
+        id="inputLoginPassword"
         class="form-control"
         placeholder="* Password"
         required=""
       />
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me" /> Remember me
+          <input type="checkbox" name="remember" value="remember-me" /> Remember
+          me
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
