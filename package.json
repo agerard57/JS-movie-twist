@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "bcryptjs": "^2.4.3",
     "eslint": "^8.10.0",
     "eslint-plugin-import": "^2.25.4",
     "express": "^4.17.3",
@@ -8,6 +9,7 @@
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
     "mongoose": "^6.2.7",
+    "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   },
@@ -53,6 +55,7 @@
   "homepage": "https://github.com/agerard57/JS_my-movie-database#readme",
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "bcryptjs": "^2.4.3",
     "eslint": "^8.10.0",
     "eslint-plugin-import": "^2.25.4",
     "express": "^4.17.3",
@@ -60,6 +63,7 @@
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
     "mongoose": "^6.2.7",
+    "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   }
