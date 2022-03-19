@@ -11,7 +11,7 @@ const refresh = () => (window.location.href = "/");
  * Stores the user's username, it's city and the type of his account.
  *
  * @module utils/userDataStorage
- * @return {void} Depending on que "remember" query, either store in localStorage or in SessionStorage.
+ * @return {void}                 Depending on que "remember" query, either store in localStorage or in SessionStorage.
  */
 
 const storeUserData = () => {
@@ -44,12 +44,13 @@ const getUserData = (itemName) => {
  * Deletes the user's username, it's city and the type of his account.
  *
  * @module utils/userDataStorage
- * @return {void} Delete from both localStorage or in SessionStorage.
+ * @return {void}                 Delete from both localStorage or in SessionStorage.
  */
 
 const deleteUserData = () => {
   localStorage.clear();
   sessionStorage.clear();
+  location.reload();
 };
 
 export { deleteUserData, getUserData, storeUserData };
