@@ -14,7 +14,7 @@ module.exports = function routes(app) {
   require("./list.routes")(app, express, srcPath);
   require("./models.routes")(router);
   require("./movie.routes")(app, express, srcPath);
-  require("./navbar.routes")(app, express, srcPath);
+  require("./core.routes")(app, express, srcPath);
   require("./utils.routes")(app, express, srcPath);
 
   app.get("*", (_req, res) => {
