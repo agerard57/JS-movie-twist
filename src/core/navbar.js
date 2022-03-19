@@ -58,13 +58,11 @@ const navbar = `
             </li>
          </ul>
          <form class="d-flex">
-            <button class="btn btn-outline-light" type="submit">GO</button>
             <input
                class="form-control me-2"
                type="search"
                placeholder="Search"
                aria-label="Movie name"
-               type="submit"
                />
             <button id="auth-button" type="button"></button>
          </form>
@@ -130,20 +128,6 @@ if (getUserData("user") === null) {
 if (getUserData("type") === "admin")
   adminMovieButtons.style.display = "initial";
 else adminMovieButtons.style.display = "none";
-
-var input = document.getElementById("myInput");
-
-// TODO SearchBar
-/* input.addEventListener("keyup", function (event) {
-  // 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action
-    event.preventDefault();
-  }
-}); */
-
-/* btn - outline - primary;
-btn - outline - danger; */
 
 // TODO BETTER NAMING FOR NAVBAR.MODULE
 // TODO Clean this file (it's a mess)
