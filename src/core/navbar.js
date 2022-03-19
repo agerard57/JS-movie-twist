@@ -1,3 +1,8 @@
+import {
+  getUserData,
+  deleteUserData,
+} from "/assets/scripts/utils/userDataStorage.js";
+
 const newHeader = new Headers();
 const url = "/data/genres";
 /* JSON Method
@@ -45,21 +50,23 @@ const navbar = `
                </a>
                <ul id="genres-list" class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
             </li>
-            <li class="nav-item">
-               <a class="nav-link disabled" href="#">Add movie</a>
+            <li id="admin-movie-buttons" class="nav-item">
+               <button id="add-movie-button" class="btn btn-outline-success" type="button">Add a movie</button>
+               <button id="remove-movie-button" class="btn btn-outline-warning" type="button">Delete a movie</button>
             </li>
             <li class="nav-item">
-               <a class="nav-link disabled" href="#">Delete movie</a>
             </li>
          </ul>
          <form class="d-flex">
+            <button class="btn btn-outline-light" type="submit">GO</button>
             <input
                class="form-control me-2"
                type="search"
                placeholder="Search"
                aria-label="Movie name"
+               type="submit"
                />
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button id="auth-button" type="button"></button>
          </form>
       </div>
    </div>
@@ -95,5 +102,49 @@ new Promise((resolve) => {
 
 document.body.insertAdjacentHTML("afterbegin", navbar);
 
+const authBtn = document.querySelector("#auth-button");
+const adminMovieButtons = document.querySelector("#admin-movie-buttons");
+const addMovieBtn = document.querySelector("#add-movie-button");
+const removeMovieBtn = document.querySelector("#remove-movie-button");
+
+if (getUserData("user") === null) {
+  authBtn.setAttribute("class", "btn btn-outline-primary");
+  authBtn.innerHTML = "Login";
+  authBtn.addEventListener("click", () => {
+    window.location.href = window.location.origin + "/login";
+  });
+} else {
+  authBtn.setAttribute("class", "btn btn-outline-danger");
+  authBtn.innerHTML = "Logout";
+  authBtn.addEventListener("click", () => {
+    deleteUserData();
+  });
+  addMovieBtn.addEventListener("click", () => {
+    window.location.href = window.location.origin + "/movie/add";
+  });
+  removeMovieBtn.addEventListener("click", () => {
+    window.location.href = window.location.origin + "/movie/remove";
+  });
+}
+
+if (getUserData("type") === "admin")
+  adminMovieButtons.style.display = "initial";
+else adminMovieButtons.style.display = "none";
+
+var input = document.getElementById("myInput");
+
+// TODO SearchBar
+/* input.addEventListener("keyup", function (event) {
+  // 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action
+    event.preventDefault();
+  }
+}); */
+
+/* btn - outline - primary;
+btn - outline - danger; */
+
 // TODO BETTER NAMING FOR NAVBAR.MODULE
+// TODO Clean this file (it's a mess)
 // TODO REGROUP DUPLICATE FILES (genres+list)
