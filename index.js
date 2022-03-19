@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const dbConfig = require("./src/config/db.config");
 const getRoutes = require("./src/routes");
-const normalizePort = require("./src/utils/normalize-port");
+const normalizePort = require("./src/utils/normalizePort");
 
 const app = express();
 const port = normalizePort(process.env.PORT);
