@@ -53,7 +53,7 @@ const deleteUserData = () => {
     localStorage.clear();
     sessionStorage.clear();
     location.reload();
-    alert("You are now logged off"), 2000;
+    alert("You are now logged off");
   }
 };
 
