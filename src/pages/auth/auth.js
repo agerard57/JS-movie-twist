@@ -13,33 +13,36 @@ const switchVisibility = () => {
 for (const radioButton of radioButtons)
   radioButton.addEventListener("change", switchVisibility);
 
-window.addEventListener("DOMContentLoaded", () => {
-  switch (qs.get("msg")) {
-    case "500":
-      alert("ERROR 500\nSomething went wrong!");
-      reloadPage();
-      break;
+switch (qs.get("msg")) {
+  case "500":
+    alert("ERROR 500\nSomething went wrong!");
+    reloadPage();
+    break;
 
-    case "created":
-      alert(
-        `User created!\nA new account for ${qs.get(
-          "user"
-        )} has succesfully been made!`
-      );
-      reloadPage();
-      break;
+  case "created":
+    alert(
+      `User created!\nA new account for ${qs.get(
+        "user"
+      )} has succesfully been made!`
+    );
+    reloadPage();
+    break;
 
-    case "username":
-      alert("ERROR\nUser not found!");
-      reloadPage();
-      break;
+  case "duplicate":
+    alert("ERROR\nUser already registered!");
+    reloadPage();
+    break;
 
-    case "password":
-      alert("ERROR\nInvalid password!");
-      reloadPage();
-      break;
+  case "username":
+    alert("ERROR\nUser not found!");
+    reloadPage();
+    break;
 
-    default:
-      break;
-  }
-});
+  case "password":
+    alert("ERROR\nInvalid password!");
+    reloadPage();
+    break;
+
+  default:
+    break;
+}

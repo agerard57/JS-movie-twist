@@ -39,7 +39,7 @@ rules:
   max-classes-per-file:
     - error
     - 1
-  no-alert: error
+  no-alert: allow
   no-await-in-loop: error
   no-caller: error
   no-console:

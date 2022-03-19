@@ -4,11 +4,11 @@ const checkDuplicateUsername = (req, res, next) => {
     username: req.body.username,
   }).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.redirect("/login?msg=500");
       return;
     }
     if (user) {
-      res.status(400).send({ message: "Failed! Username is already in use!" });
+      res.redirect("/login?msg=duplicate");
       return;
     }
     next();
@@ -18,4 +18,5 @@ const checkDuplicateUsername = (req, res, next) => {
 const verifySignUp = {
   checkDuplicateUsername,
 };
+
 module.exports = verifySignUp;
