@@ -10,11 +10,11 @@ exports.signup = (req, res) => {
 
   user.save((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.redirect("/login?msg=500");
       return;
     }
-    // TODO Add redirection page once user created (or even toasts)
-    res.redirect("/login");
+    var username = encodeURIComponent(user.username);
+    res.redirect(`/login?msg=created&user=${username}`);
   });
 };
 
@@ -23,19 +23,16 @@ exports.login = (req, res) => {
     username: req.body.inputLoginUsername,
   }).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.redirect("/login?msg=500");
       return;
     }
-    if (!user) return res.status(404).send({ message: "User Not found." });
+    if (!user) return res.redirect("/login?msg=username");
 
     var passwordIsValid = bcrypt.compareSync(
       req.body.inputLoginPassword,
       user.password
     );
-    if (!passwordIsValid)
-      return res.status(401).send({
-        message: "Invalid Password!",
-      });
+    if (!passwordIsValid) return res.redirect("/login?msg=password");
 
     var username = encodeURIComponent(user.username);
     var city = encodeURIComponent(user.city);

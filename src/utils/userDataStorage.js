@@ -48,9 +48,13 @@ const getUserData = (itemName) => {
  */
 
 const deleteUserData = () => {
-  localStorage.clear();
-  sessionStorage.clear();
-  location.reload();
+  const prompt = confirm("Are you sure you want to Logout ?");
+  if (prompt) {
+    localStorage.clear();
+    sessionStorage.clear();
+    location.reload();
+    alert("You are now logged off"), 2000;
+  }
 };
 
 export { deleteUserData, getUserData, storeUserData };
