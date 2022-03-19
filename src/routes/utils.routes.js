@@ -15,6 +15,11 @@ module.exports = function (app, express, srcPath) {
   );
 
   app.use(
+    "/assets/scripts/utils/getWeather.js",
+    express.static(srcPath + "utils/getWeather.js")
+  );
+
+  app.use(
     "/assets/scripts/utils/userDataStorage.js",
     express.static(srcPath + "utils/userDataStorage.js")
   );
