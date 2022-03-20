@@ -8,19 +8,19 @@ const setItems = (storage) =>
 const refresh = () => (window.location.href = "/");
 
 /**
- * Stores the user's username, it's city and the type of his account.
+ * Deletes the user's username, it's city and the type of his account.
  *
  * @module utils/userDataStorage
- * @return {void}                 Depending on que "remember" query, either store in localStorage or in SessionStorage.
+ * @return {void}                 Delete from both localStorage or in SessionStorage.
  */
 
-const storeUserData = () => {
-  if (remembers === "true") {
-    setItems(localStorage);
-    refresh();
-  } else if (remembers === "false") {
-    setItems(sessionStorage);
-    refresh();
+const deleteUserData = () => {
+  const prompt = confirm("Are you sure you want to Logout ?");
+  if (prompt) {
+    localStorage.clear();
+    sessionStorage.clear();
+    location.reload();
+    alert("You are now logged off");
   }
 };
 
@@ -41,20 +41,43 @@ const getUserData = (itemName) => {
 };
 
 /**
- * Deletes the user's username, it's city and the type of his account.
+ * Stores the user's username, it's city and the type of his account.
  *
  * @module utils/userDataStorage
- * @return {void}                 Delete from both localStorage or in SessionStorage.
+ * @return {void}                 Depending on que "remember" query, either store in localStorage or in SessionStorage.
  */
 
-const deleteUserData = () => {
-  const prompt = confirm("Are you sure you want to Logout ?");
-  if (prompt) {
-    localStorage.clear();
-    sessionStorage.clear();
-    location.reload();
-    alert("You are now logged off");
+const storeUserData = () => {
+  if (remembers === "true") {
+    setItems(localStorage);
+    refresh();
+  } else if (remembers === "false") {
+    setItems(sessionStorage);
+    refresh();
   }
 };
 
-export { deleteUserData, getUserData, storeUserData };
+/**
+ * Boolean that checks if user is admin.
+ *
+ * @module utils/userDataStorage
+ * @return {Boolean}              Returns either true if admin or false if not.
+ */
+
+const isUserAdmin = getUserData("type") === "admin";
+/**
+ * Boolean that checks if user is logged.
+ *
+ * @module utils/userDataStorage
+ * @return {Boolean}              Returns either true if logged or false if not.
+ */
+
+const isUserLogged = getUserData("user") !== null;
+
+export {
+  deleteUserData,
+  getUserData,
+  storeUserData,
+  isUserAdmin,
+  isUserLogged,
+};
