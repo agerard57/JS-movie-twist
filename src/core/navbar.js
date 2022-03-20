@@ -72,7 +72,7 @@ const navbar = `
             <span id="weather" class="nav-link text-muted text-center">
             </span>
             <span class="nav-link text-muted text-center  d-none d-md-block">|</span>
-            <span id="connected-as" class="nav-link text-muted text-center">Blablabla blabla
+            <span id="connected-as" class="nav-link text-muted text-center">
             </span>
             <span class="nav-link text-muted text-center d-none d-md-block">|</span>
           </div>
