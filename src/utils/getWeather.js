@@ -50,7 +50,9 @@ export const getWeather = () => {
     fetch(`${baseApiUrl}?appid=${apiKey}&${cityQuery}`)
       .then((resp) => resp.json())
       .then((data) => {
-        weather.innerHTML = `${data.name}  ${celcius(data.main.temp)}`;
+        weather.innerHTML = `${getUserData("city")}  ${celcius(
+          data.main.temp
+        )}`;
       })
       .catch(() => {
         navigator.geolocation.getCurrentPosition(
