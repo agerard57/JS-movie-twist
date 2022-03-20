@@ -1,6 +1,5 @@
 const GenresModel = require("../models/genres.model");
 const MoviesModel = require("../models/movies.model");
-const UsersModel = require("../models/users.model");
 
 module.exports = function (router) {
   router.get("/data/movies", async (req, res) => {
@@ -13,3 +12,5 @@ module.exports = function (router) {
     res.send(posts);
   });
 };
+
+//TODO Remove ALL unused "req"s
