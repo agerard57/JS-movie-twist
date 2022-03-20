@@ -57,20 +57,13 @@ const navbar = `
                 aria-labelledby="navbarDropdown"
               ></ul>
             </li>
-            <li id="admin-movie-buttons" class="nav-item">
+            <li class="nav-item">
               <button
                 id="add-movie-button"
                 class="btn btn-outline-success"
                 type="button"
               >
                 Add a movie
-              </button>
-              <button
-                id="remove-movie-button"
-                class="btn btn-outline-warning"
-                type="button"
-              >
-                Delete a movie
               </button>
             </li>
             <li class="nav-item"></li>
@@ -127,10 +120,8 @@ new Promise((resolve) => {
 document.body.insertAdjacentHTML("afterbegin", navbar);
 
 const authBtn = document.querySelector("#auth-button");
-const adminMovieButtons = document.querySelector("#admin-movie-buttons");
 const addMovieBtn = document.querySelector("#add-movie-button");
 const connectedAs = document.querySelector("#connected-as");
-const removeMovieBtn = document.querySelector("#remove-movie-button");
 const spanWrapper = document.querySelector("#span-wrapper");
 const weather = document.querySelector("#weather");
 const loggedNavbarFeatures = () => {
@@ -145,9 +136,6 @@ const loggedNavbarFeatures = () => {
   addMovieBtn.addEventListener("click", () => {
     window.location.href = window.location.origin + "/movie/add";
   });
-  removeMovieBtn.addEventListener("click", () => {
-    window.location.href = window.location.origin + "/movie/remove";
-  });
 };
 const notLoggedNavbarFeatures = () => {
   authBtn.setAttribute("class", "btn btn-outline-primary");
@@ -161,8 +149,8 @@ const notLoggedNavbarFeatures = () => {
 if (isUserLogged) loggedNavbarFeatures();
 else notLoggedNavbarFeatures();
 
-if (isUserAdmin) adminMovieButtons.style.display = "initial";
-else adminMovieButtons.style.display = "none";
+if (isUserAdmin) addMovieBtn.style.display = "initial";
+else addMovieBtn.style.display = "none";
 
 // TODO BETTER NAMING FOR NAVBAR.MODULE
 // TODO Clean this file (it's a mess)
