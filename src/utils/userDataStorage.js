@@ -1,9 +1,12 @@
-const qs = new URLSearchParams(window.location.search);
-const remembers = qs.get("remember");
-const queries = ["user", "city", "type"];
+import { UserData } from "/assets/class/userData.class.js";
 
-const setItems = (storage) =>
-  queries.forEach((query) => storage.setItem(query, qs.get(query)));
+const qs = new URLSearchParams(window.location.search);
+
+const setItems = (storage, user) => {
+  storage.setItem("city", user.city);
+  storage.setItem("type", user.type);
+  storage.setItem("user", user.username);
+};
 
 const refresh = () => (window.location.href = "/");
 
@@ -48,12 +51,19 @@ const getUserData = (itemName) => {
  */
 
 const storeUserData = () => {
-  if (remembers === "true") {
-    setItems(localStorage);
-    refresh();
-  } else if (remembers === "false") {
-    setItems(sessionStorage);
-    refresh();
+  const queryResultsArray = [];
+  const queries = ["user", "city", "type", "remember"];
+
+  queries.forEach((query) => queryResultsArray.push(qs.get(query)));
+  if (!queryResultsArray.includes(null)) {
+    const user = new UserData(...queryResultsArray);
+    if (user.remembers === "true") {
+      setItems(localStorage, user);
+      refresh();
+    } else if (user.remembers === "false") {
+      setItems(sessionStorage, user);
+      refresh();
+    }
   }
 };
 
@@ -65,6 +75,7 @@ const storeUserData = () => {
  */
 
 const isUserAdmin = getUserData("type") === "admin";
+
 /**
  * Boolean that checks if user is logged.
  *
