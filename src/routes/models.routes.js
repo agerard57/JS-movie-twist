@@ -12,9 +12,4 @@ module.exports = function (router) {
     const posts = await GenresModel.find();
     res.send(posts);
   });
-
-  router.get("/data/users", async (req, res) => {
-    const posts = await UsersModel.find();
-    res.send(posts);
-  });
 };
