@@ -21,7 +21,7 @@ export const createMoviePage = (movie) => {
 
   // Film language
   const itemLang = document.querySelector("#item-lang");
-  itemLang.innerHTML = movie.original_language.toUpperCase();
+  itemLang.innerHTML = movie.original_language;
 
   // Average note
   const avgNote = document.querySelector("#item-avgnote");

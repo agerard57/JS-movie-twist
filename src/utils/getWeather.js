@@ -32,9 +32,7 @@ export const getWeather = () => {
     fetch(`${baseApiUrl}?appid=${apiKey}&${coordinatesQuery}`)
       .then((resp) => resp.json())
       .then((data) => {
-        weather.innerHTML = `${data.name.toUpperCase()}  ${celcius(
-          data.main.temp
-        )}`;
+        weather.innerHTML = `${data.name}  ${celcius(data.main.temp)}`;
       })
       .catch(() => {
         weather.style.display = "none";
@@ -52,9 +50,7 @@ export const getWeather = () => {
     fetch(`${baseApiUrl}?appid=${apiKey}&${cityQuery}`)
       .then((resp) => resp.json())
       .then((data) => {
-        weather.innerHTML = `${data.name.toUpperCase()}  ${celcius(
-          data.main.temp
-        )}`;
+        weather.innerHTML = `${data.name}  ${celcius(data.main.temp)}`;
       })
       .catch(() => {
         navigator.geolocation.getCurrentPosition(
