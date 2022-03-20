@@ -1,15 +1,13 @@
 [
   {
     "username": "agerard57",
-    "email": "test@agerard.dev",
-    "password": "test",
+    "password": "$2a$08$DdTPq4zBTT7AbauwJK/9oOsUbgPxv8DvbSrdeMqXQe/JvG7ZVczYC",
     "city": "Metz",
     "type": "admin"
   },
   {
-    "username": "hale",
-    "email": "nhale@hotmail.fr",
-    "password": "test2",
+    "username": "az",
+    "password": "$2a$08$fkPZ9vrrKvcaQWjJ7YQP5eutPuNbXJbBfueBcKqB9wJOf8gSuYADi",
     "city": "New York",
     "type": "user"
   }
