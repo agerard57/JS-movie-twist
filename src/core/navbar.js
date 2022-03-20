@@ -1,7 +1,9 @@
 import { getWeather } from "/assets/scripts/utils/getWeather.js";
 import {
-  getUserData,
   deleteUserData,
+  getUserData,
+  isUserAdmin,
+  isUserLogged,
 } from "/assets/scripts/utils/userDataStorage.js";
 
 const newHeader = new Headers();
@@ -130,19 +132,10 @@ const addMovieBtn = document.querySelector("#add-movie-button");
 const connectedAs = document.querySelector("#connected-as");
 const removeMovieBtn = document.querySelector("#remove-movie-button");
 const spanWrapper = document.querySelector("#span-wrapper");
-const username = getUserData("user");
 const weather = document.querySelector("#weather");
-
-if (username === null) {
-  authBtn.setAttribute("class", "btn btn-outline-primary");
-  authBtn.innerHTML = "Login";
-  authBtn.addEventListener("click", () => {
-    window.location.href = window.location.origin + "/login";
-  });
-  spanWrapper.style.display = "none";
-} else {
+const loggedNavbarFeatures = () => {
   spanWrapper.style.display = "inherit";
-  connectedAs.innerHTML = `Connected as ${username}`;
+  connectedAs.innerHTML = `Connected as ${getUserData("user")}`;
   weather.innerHTML = `${getWeather()}`;
   authBtn.setAttribute("class", "btn btn-outline-danger");
   authBtn.innerHTML = "Logout";
@@ -155,13 +148,21 @@ if (username === null) {
   removeMovieBtn.addEventListener("click", () => {
     window.location.href = window.location.origin + "/movie/remove";
   });
-}
+};
+const notLoggedNavbarFeatures = () => {
+  authBtn.setAttribute("class", "btn btn-outline-primary");
+  authBtn.innerHTML = "Login";
+  authBtn.addEventListener("click", () => {
+    window.location.href = window.location.origin + "/login";
+  });
+  spanWrapper.style.display = "none";
+};
 
-if (getUserData("type") === "admin")
-  adminMovieButtons.style.display = "initial";
+if (isUserLogged) loggedNavbarFeatures();
+else notLoggedNavbarFeatures();
+
+if (isUserAdmin) adminMovieButtons.style.display = "initial";
 else adminMovieButtons.style.display = "none";
-
-if (getUserData("city") !== null) console.log(getWeather());
 
 // TODO BETTER NAMING FOR NAVBAR.MODULE
 // TODO Clean this file (it's a mess)
