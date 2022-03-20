@@ -2,9 +2,9 @@
  * Format the release date of the movie.
  *
  * @module utils
- * @param {string}           date   Is the date fed by the database.
- * @param {string}           format Is the format wanted ("fullDate | yearOnly").
- * @return {string}          Returns the formatted release date as a string.
+ * @param {String}           date   Is the date fed by the database.
+ * @param {String}           format Is the format wanted ("fullDate | yearOnly").
+ * @return {String}          Returns the formatted release date as a string.
  */
 
 export const formatReleaseDate = (date, format) => {

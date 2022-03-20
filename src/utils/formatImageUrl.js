@@ -2,14 +2,14 @@
  * Format the imgaes given by the database.
  *
  * @module utils
- * @param {string}           path Is the image path fed by the database.
- * @param {string}           size Is the size of the image wanted (see under the function).
- * @return {string}          Returns the full image URL as a string.
+ * @param {String}           path Is the image path fed by the database.
+ * @param {String}           size Is the size of the image wanted (see under the function).
+ * @return {String}          Returns the full image URL as a string.
  */
 
-export const formatImageUrl = (date, format) => {
+export const formatImageUrl = (path, size) => {
   const baseUrl = "https://image.tmdb.org/t/p/";
-  return baseUrl + format + date;
+  return baseUrl + size + path;
 };
 
 /*

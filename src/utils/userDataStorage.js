@@ -28,8 +28,8 @@ const deleteUserData = () => {
  * Find the data in localStorage then in sessionStorage.
  *
  * @module utils/userDataStorage
- * @param {string}                itemName Name of the wanted item.
- * @return {string | undefined}   Returns the value found or undefined if not existing.
+ * @param {String}                itemName Name of the wanted item.
+ * @return {String | undefined}   Returns the value found or undefined if not existing.
  */
 
 const getUserData = (itemName) => {
