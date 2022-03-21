@@ -1,3 +1,4 @@
+import { adminButtons } from "/assets/scripts/list/adminButtons.model.js";
 import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
 
@@ -12,11 +13,6 @@ export const createCard = (element) => {
 
   const card = document.createElement("div");
   card.setAttribute("class", "card bg-dark text-white");
-
-  // event listener
-  card.addEventListener("click", () => {
-    window.location.href = window.location.origin + `/id/${element.id}`;
-  });
 
   // banner image
   const banner = document.createElement("img");
@@ -54,20 +50,40 @@ export const createCard = (element) => {
 
   cards.appendChild(card);
 
+  cardOverlay.addEventListener("click", () => {
+    window.location.href = `/id/${element.id}`;
+  });
+
+  adminButtons(card);
+
   // Another way to implement this
   /*
-    const card = `
+  const card = `
             <div class="card bg-dark text-white">
+              <div>
+              <button
+                  class="btn btn-outline-warning"
+                  type="button"
+                >
+                Delete a movie
+                </button>
+                <button
+                class="btn btn-outline-warning"
+                  type="button"
+                >
+                Delete a movie
+                </button>
+              </div>
               <img class="card-img" src="${imgUrl("w780")}" alt="Card image" />
               <div class="card-img-overlay">
-                <h5 class="card-title">${element.title}</h5>
-                <p class="card-text">${shortenedStoryline}</p>
+              <h5 class="card-title">${element.title}</h5>
+              <p class="card-text">${shortenedStoryline}</p>
                 <p class="card-text">${movieReleaseDate}</p>
-              </div>
+                </div>
             </div>
             `; 
     div.innerHTML = card;   
     div.classList.add("mx-2");
     cards.appendChild(div);
-  */
+    */
 };
