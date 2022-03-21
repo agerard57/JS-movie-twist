@@ -27,7 +27,7 @@ const loggedMessage = () => {
   redirectBtn.setAttribute("class", "btn btn-secondary");
   redirectBtn.innerHTML = "Return to homepage";
   redirectBtn.addEventListener("click", () => {
-    window.location.href = window.location.origin;
+    window.location.href = "/";
   });
   divContainer.appendChild(redirectBtn);
 

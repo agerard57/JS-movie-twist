@@ -107,8 +107,7 @@ new Promise((resolve) => {
           liGenresList.appendChild(listElement);
 
           listElement.addEventListener("click", () => {
-            window.location.href =
-              window.location.origin + `/genre/${genre.id}`;
+            window.location.href = `/genre/${genre.id}`;
           });
 
           ulGenresList.appendChild(liGenresList);
@@ -134,14 +133,14 @@ const loggedNavbarFeatures = () => {
     deleteUserData();
   });
   addMovieBtn.addEventListener("click", () => {
-    window.location.href = window.location.origin + "/movie/add";
+    window.location.href = "/movie/add";
   });
 };
 const notLoggedNavbarFeatures = () => {
   authBtn.setAttribute("class", "btn btn-outline-primary");
   authBtn.innerHTML = "Login";
   authBtn.addEventListener("click", () => {
-    window.location.href = window.location.origin + "/login";
+    window.location.href = "/login";
   });
   spanWrapper.style.display = "none";
 };

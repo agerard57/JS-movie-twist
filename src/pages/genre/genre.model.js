@@ -15,7 +15,7 @@ export const createCard = (element) => {
 
   // event listener
   card.addEventListener("click", () => {
-    window.location.href = window.location.origin + `/id/${element.id}`; //TODO REPLACE TO WINDOW ORIGIN
+    window.location.href = `/id/${element.id}`;
   });
 
   // banner image
