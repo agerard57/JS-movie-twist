@@ -1,6 +1,6 @@
 import { isUserAdmin } from "/assets/scripts/utils/userDataStorage.js";
 
-export const adminButtons = (card) => {
+export const adminButtons = (card, element) => {
   if (isUserAdmin) {
     // buttons div
     const buttonsDiv = document.createElement("div");
@@ -35,7 +35,25 @@ export const adminButtons = (card) => {
     });
 
     trashSvgDiv.addEventListener("click", () => {
-      //TODO
+      document.querySelector("#modal").style.display = "inherit";
+
+      document.querySelector(
+        "#delete-message"
+      ).innerHTML = `Do you really want to delete ${element.title}?`;
+
+      document.querySelector("#delete-button").addEventListener("click", () => {
+        card.remove();
+        (async () => {
+          await fetch(`/movie/delete/${element.id}`, { method: "DELETE" });
+        })();
+        document.querySelector("#modal").style.display = "none";
+      });
+
+      document.querySelectorAll(".close-modal").forEach((item) => {
+        item.addEventListener("click", () => {
+          document.querySelector("#modal").style.display = "none";
+        });
+      });
     });
   }
 };

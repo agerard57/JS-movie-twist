@@ -17,7 +17,7 @@ module.exports = function routes(app) {
   require("./movie.routes")(app, express, srcPath);
   require("./utils.routes")(app, express, srcPath);
 
-  app.get("*", (_req, res) => {
+  /*   app.get("*", (_req, res) => {
     res.redirect("/");
-  });
+  }); */
 };

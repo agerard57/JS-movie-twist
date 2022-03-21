@@ -51,10 +51,10 @@ export const createCard = (element) => {
   cards.appendChild(card);
 
   cardOverlay.addEventListener("click", () => {
-    window.location.href = `/id/${element.id}`;
+    window.location.href = `/movie/${element.id}`;
   });
 
-  adminButtons(card);
+  adminButtons(card, element);
 
   // Another way to implement this
   /*

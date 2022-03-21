@@ -20,6 +20,36 @@
   </head>
 
   <body>
+    <div id="modal">
+      <div class="modal-dialog" style="margin-top: 20%">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm deletion ?</h4>
+            <button
+              type="button"
+              class="btn-close close-modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="delete-message"></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-default close-modal"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button id="delete-button" type="button" class="btn btn-danger">
+              DELETE
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+    </div>
     <h1 id="page-title" class="d-flex justify-content-center">Movies</h1>
     <div class="container" id="cards"></div>
     <script type="module" src="/assets/scripts/list/list.js"></script>
