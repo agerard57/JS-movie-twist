@@ -29,12 +29,14 @@ export const createMoviePage = (movie) => {
 
   // Genres
   const genres = document.querySelector("#genres-container");
-  var genresList = [];
-  movie.genre_ids.forEach((element) => genresList.push(getGenreName(element)));
-  Promise.all(genresList).then((values) => {
-    genres.innerHTML = values.join(" | ");
+  movie.genre_ids.forEach((element) => {
+    getGenreName(element).then((genreName) => {
+      const genresSpan = document.createElement("span");
+      genresSpan.setAttribute("class", "badge bg-success");
+      genresSpan.innerHTML = genreName;
+      genres.appendChild(genresSpan);
+    });
   });
-
   // Overview
   const overview = document.querySelector("#overview");
   overview.innerHTML = movie.overview;
