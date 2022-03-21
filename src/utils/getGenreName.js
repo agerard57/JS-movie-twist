@@ -26,7 +26,6 @@ export const getGenreName = (genreId) =>
         })
         .then((genres) => {
           let genre = genres.find((x) => x.id === genreId);
-          resolve(genre.name);
           return genre.name;
         })
     );
