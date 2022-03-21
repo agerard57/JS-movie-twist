@@ -17,4 +17,9 @@ module.exports = function (app, express, srcPath) {
     "/assets/scripts/list/adminButtons.model.js",
     express.static(srcPath + "pages/list/adminButtons.model.js")
   );
+
+  app.get("/genre/:id", (req, res) => {
+    let id = req.params.id;
+    res.sendFile(srcPath + "pages/list/list.html", { id: id });
+  });
 };

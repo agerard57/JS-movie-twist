@@ -11,7 +11,6 @@ module.exports = function routes(app) {
   require("./auth.routes")(app, express, srcPath);
   require("./class.routes")(app, express, srcPath);
   require("./core.routes")(app, express, srcPath);
-  require("./genre.routes")(app, express, srcPath);
   require("./home.routes")(app, express, router, srcPath);
   require("./list.routes")(app, express, srcPath);
   require("./models.routes")(router);
