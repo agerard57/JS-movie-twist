@@ -22,20 +22,18 @@
       <div id="info-container">
         <img id="poster" class="img-rounded" alt="poster" />
         <div id="titles">
-          <h3 id="title">${movie.title}</h3>
-          <h5 id="original-title">${movie.original_title}</h5>
+          <h3 id="title"></h3>
+          <h5 id="original-title"></h5>
         </div>
         <div id="metadata-container">
-          <span id="item-date"
-            >${formatReleaseDate(movie.release_date, "yearOnly")}</span
-          >
+          <span id="item-date"></span>
           <span class="item-separator">|</span>
-          <span id="item-lang">${movie.original_language}</span>
+          <span id="item-lang"></span>
           <span class="item-separator">|</span>
-          <span id="item-avgnote">${movie.vote_average}</span>
+          <span id="item-avgnote"></span>
         </div>
-        <span id="genres-container">${movie.genre_ids[0]}</span>
-        <p id="overview">${movie.overview}</p>
+        <span id="genres-container"></span>
+        <p id="overview"></p>
         <button id="back-button" type="button" class="btn btn-outline-light">
           Go back
         </button>
