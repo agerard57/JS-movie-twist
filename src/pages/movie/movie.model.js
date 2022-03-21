@@ -48,11 +48,3 @@ export const createMoviePage = (movie) => {
     "original"
   )})`;
 };
-
-/* TODO list 
-  - Average note in color
-  - Better html display by default
-  - See what data has to be displayed next
-  - Make the whole thing responsive!
-  - Add indexes on forEach loops 
-*/

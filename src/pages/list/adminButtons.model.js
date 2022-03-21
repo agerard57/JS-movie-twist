@@ -29,8 +29,6 @@ export const adminButtons = (card) => {
 
     card.appendChild(buttonsDiv);
 
-    //TODO Add this to genre list
-
     // event listeners
     editSvgDiv.addEventListener("click", () => {
       //TODO

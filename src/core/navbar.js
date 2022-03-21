@@ -150,8 +150,3 @@ else notLoggedNavbarFeatures();
 
 if (isUserAdmin) addMovieBtn.style.display = "initial";
 else addMovieBtn.style.display = "none";
-
-// TODO BETTER NAMING FOR NAVBAR.MODULE
-// TODO Clean this file (it's a mess)
-// TODO REGROUP DUPLICATE FILES (genres+list)
-// TODO Modals

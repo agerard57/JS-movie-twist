@@ -12,5 +12,3 @@ module.exports = function (router) {
     res.send(posts);
   });
 };
-
-//TODO Remove ALL unused "req"s
