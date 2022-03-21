@@ -74,7 +74,7 @@ const storeUserData = () => {
  * @return {Boolean}              Returns either true if admin or false if not.
  */
 
-const isUserAdmin = getUserData("type") === "admin";
+const isUserAdmin = getUserData("type") === "ADMIN";
 
 /**
  * Boolean that checks if user is logged.
