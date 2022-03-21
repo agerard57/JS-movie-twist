@@ -1,4 +1,4 @@
-import { createCard } from "/assets/scripts/list/list.model.js";
+import { createCard } from "/assets/scripts/list/createCard.model.js";
 
 const newHeader = new Headers();
 const url = "/data/movies";

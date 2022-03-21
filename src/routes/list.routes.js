@@ -9,7 +9,12 @@ module.exports = function (app, express, srcPath) {
   );
 
   app.use(
-    "/assets/scripts/list/list.model.js",
-    express.static(srcPath + "pages/list/list.model.js")
+    "/assets/scripts/list/createCard.model.js",
+    express.static(srcPath + "pages/list/createCard.model.js")
+  );
+
+  app.use(
+    "/assets/scripts/list/adminButtons.model.js",
+    express.static(srcPath + "pages/list/adminButtons.model.js")
   );
 };
