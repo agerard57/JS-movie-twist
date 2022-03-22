@@ -7,3 +7,5 @@ require("./src/server/app");
 // TODO Modals                                     TODO //
 // TODO Remove ALL unused "req"s                   TODO //
 // TODO Add indexes on forEach loops               TODO //
+// TODO Middleware thats checks if id exists       TODO //
+// TODO Change all routers to app?                 TODO //
