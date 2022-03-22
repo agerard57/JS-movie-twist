@@ -50,9 +50,14 @@ export const getWeather = () => {
     fetch(`${baseApiUrl}?appid=${apiKey}&${cityQuery}`)
       .then((resp) => resp.json())
       .then((data) => {
-        weather.innerHTML = `${getUserData("city")}  ${celcius(
-          data.main.temp
-        )}`;
+        weather.innerHTML = `
+        <img class="mx-auto d-block" src="http://openweathermap.org/img/wn/${
+          data.weather[0].icon
+        }.png" />
+        <span class="nav-link text-muted text-center">${getUserData(
+          "city"
+        )}  ${celcius(data.main.temp)}</span>
+        `;
       })
       .catch(() => {
         navigator.geolocation.getCurrentPosition(
@@ -62,3 +67,5 @@ export const getWeather = () => {
         );
       });
 };
+
+//TODO IF {cod: "404", message: "city not found"}
