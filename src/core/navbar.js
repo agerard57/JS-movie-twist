@@ -69,7 +69,7 @@ const navbar = `
             <li class="nav-item"></li>
           </ul>
           <div id="span-wrapper">
-            <span id="weather" class="nav-link text-muted text-center">
+            <span id="weather" class=" text-muted">
             </span>
             <span class="nav-link text-muted text-center  d-none d-md-block">|</span>
             <span id="connected-as" class="nav-link text-muted text-center">
@@ -78,13 +78,16 @@ const navbar = `
           </div>
           <form class="d-flex">
             <input
+              id="search-bar"
               class="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="Quick search"
               aria-label="Movie name"
             />
+            <ul id="live-search" class="list-group form-control me-2 hide">   
+            </ul>
+            </form>
             <button id="auth-button" type="button"></button>
-          </form>
         </div>
       </div>
     </nav>
@@ -150,3 +153,37 @@ else notLoggedNavbarFeatures();
 
 if (isUserAdmin) addMovieBtn.style.display = "initial";
 else addMovieBtn.style.display = "none";
+
+const searchBar = document.querySelector("#search-bar");
+const searchResults = document.querySelector("#live-search");
+searchBar.addEventListener("keyup", () => {
+  const searchBarValue = searchBar.value;
+  if (searchBarValue.length === 0) searchResults.classList.add("hide");
+  else {
+    searchResults.classList.remove("hide");
+
+    (async () => {
+      const rawResponse = await fetch("/search", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: searchBarValue }),
+      });
+      const content = await rawResponse.json();
+      searchResults.innerHTML = content.response;
+      console.log(content);
+    })();
+  }
+
+  /*   $.ajax({
+    url: "/",
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({ search: str }),
+    success: function (result) {
+      search.html(result.response);
+    },
+  }); */
+});
