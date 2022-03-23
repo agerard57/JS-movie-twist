@@ -31,7 +31,7 @@ export const adminButtons = (card, element) => {
 
     // event listeners
     editSvgDiv.addEventListener("click", () => {
-      //TODO
+      window.location.href = `/movie/edit/${element.id}`;
     });
 
     trashSvgDiv.addEventListener("click", () => {
@@ -57,3 +57,4 @@ export const adminButtons = (card, element) => {
     });
   }
 };
+//TODO Maybe clean this up a bit, heh?

@@ -1,3 +1,4 @@
+const movieController = require("../controllers/movie.controller");
 const MoviesModel = require("../models/movies.model");
 
 module.exports = function (app, express, srcPath) {
@@ -16,9 +17,27 @@ module.exports = function (app, express, srcPath) {
     express.static(srcPath + "pages/movie/movie.model.js")
   );
 
-  app.get("/movie/add", (_req, res) => {
+  app.use(
+    "/assets/scripts/movie/movie.form.js",
+    express.static(srcPath + "pages/movie/movie.form.js")
+  );
+
+  app.use(
+    "/assets/scripts/movie/movie.edit.js",
+    express.static(srcPath + "pages/movie/movie.edit.js")
+  );
+
+  // Shouldn't it be post ? TODO
+  /*   app.get("/movie/add", (_req, res) => {
     res.sendFile(srcPath + "index.html");
-  });
+  }); */
+  app
+    .route("/movie/edit/:id") //TODO UTILS TO GET URL /
+    .get((req, res) => {
+      let id = req.params.id;
+      res.sendFile(srcPath + "pages/movie/movie.form.html", { id: id });
+    })
+    .post(movieController.update);
 
   app.delete("/movie/delete/:id", (req, res) => {
     let id = req.params.id;

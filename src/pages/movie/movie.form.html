@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/core.css" />
+    <link rel="stylesheet" href="/assets/css/movie.form.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <title>MMDB - Add movie</title>
+  </head>
+
+  <body>
+    <h1 id="page-title" class="d-flex justify-content-center">Add movie</h1>
+    <form id="add-movie-form" class="add-movie-form" method="POST" action="?">
+      <div class="row inline form-group g-3 space">
+        <div class="form-group g-3 col-6">
+          <div class="col-auto">
+            <label for="title" class="form-label">Title:</label>
+          </div>
+          <div class="col-auto">
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="title"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group g-3 col-6">
+          <div class="col-auto">
+            <label for="originaltitle" class="form-label"
+              >Original title:</label
+            >
+          </div>
+          <div class="col-auto">
+            <input
+              type="text"
+              class="form-control"
+              name="originaltitle"
+              id="originaltitle"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-12 form-group g-3 space">
+        <label for="genres" class="form-label">Genres:</label>
+        <select
+          name="genres"
+          id="genres"
+          class="form-select"
+          multiple
+          size="7"
+          required
+        ></select>
+        <div class="form-text">
+          Hold down the control (CTRL) or command button to select multiple
+          genres
+        </div>
+      </div>
+      <div class="col-12 form-group g-3 space">
+        <label for="overview" class="form-label">Overview:</label>
+        <textarea
+          class="form-control"
+          id="overview"
+          name="overview"
+          rows="5"
+          maxlength="500"
+          required
+        ></textarea>
+        <div id="overview-msg" class="form-text"></div>
+      </div>
+      <div class="row g-3 align-items-center inline space">
+        <div class="form-group g-3 col-auto">
+          <div class="col-auto">
+            <label for="releasedate" class="form-label">Release date:</label>
+          </div>
+          <div class="col-auto">
+            <input
+              type="date"
+              id="releasedate"
+              name="releasedate"
+              min="1895-12-01"
+              max="2100-01-01"
+              required
+            />
+          </div>
+          <div class="col-auto">
+            <span class="form-text">US Release date</span>
+          </div>
+        </div>
+        <div class="form-group g-3 col-auto">
+          <div class="col-auto">
+            <label for="avgvote" class="form-label">Global note:</label>
+          </div>
+          <input
+            type="number"
+            step="0.1"
+            min="0"
+            max="10"
+            id="avgvote"
+            name="avgvote"
+            required
+          />
+          <div class="col-auto">
+            <span class="form-text">Out of / 10</span>
+          </div>
+        </div>
+        <div class="form-group g-3 col-auto">
+          <div class="col-auto">
+            <label for="lang" class="form-label">Country:</label>
+          </div>
+          <div class="col-auto">
+            <input size="6" maxlength="2" name="lang" id="lang" required />
+          </div>
+          <div class="col-auto">
+            <span class="form-text">2 letter abbreviation</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center space">
+        <button
+          id="form-button"
+          class="btn btn-lg btn-success btn-block"
+          type="submit"
+        >
+          Add movie
+        </button>
+      </div>
+    </form>
+    <script type="module" src="/assets/scripts/movie/movie.form.js"></script>
+    <script type="module" src="/assets/scripts/navbar.js"></script>
+  </body>
+</html>
+
+<!--     
+  "backdrop_path": "/5hNcsnMkwU2LknLoru73c76el3z.jpg",
+    "genre_ids": [35, 18, 10749],
+    "id": 19404,
+    "original_language": "hi",
+    "original_title": "दिलवाले दुल्हनिया ले जायेंगे",
+    "overview": "Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.",
+    "popularity": 30.063,
+    "poster_path": "/2CAL2433ZeIihfX1Hb2139CX0pW.jpg",
+    "release_date": "1995-10-20",
+    "title": "Dilwale Dulhania Le Jayenge",
+    "vote_average": 8.7,
+    "vote_count": 3475 
+  -->
