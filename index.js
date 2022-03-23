@@ -9,3 +9,9 @@ require("./src/server/app");
 // TODO Add indexes on forEach loops               TODO //
 // TODO Middleware thats checks if id exists       TODO //
 // TODO Change all routers to app?                 TODO //
+// TODO Update forms for login/signup (add args?)  TODO //
+
+// TODO Add password verification                  TODO //
+/*     
+<input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+ */
