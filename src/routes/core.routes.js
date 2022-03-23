@@ -3,4 +3,9 @@ module.exports = function (app, express, srcPath) {
     "/assets/scripts/navbar.js",
     express.static(srcPath + "core/navbar.js")
   );
+
+  app.use(
+    "/assets/scripts/navbar.model.js",
+    express.static(srcPath + "core/navbar.model.js")
+  );
 };
