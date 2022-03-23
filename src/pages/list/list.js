@@ -1,7 +1,6 @@
 import { createCard } from "/assets/scripts/list/createCard.model.js";
-import { getGenreName } from "/assets/scripts/utils/getGenreName.js";
-
-const urlContains = (string) => window.location.href.includes(string);
+import { getGenreList } from "/assets/scripts/utils/getGenreList.js";
+import { urlContains } from "/assets/scripts/utils/urlContains.js";
 
 const newHeader = new Headers();
 const url = "/data/movies";
@@ -48,7 +47,7 @@ else if (urlContains("genre")) {
     );
   });
 
-  getGenreName(genreId).then((genreName) => {
+  getGenreList(genreId).then((genreName) => {
     pageTitle.innerHTML = genreName;
     tabTitle.innerHTML = `MMDB - ${genreName}`;
   });

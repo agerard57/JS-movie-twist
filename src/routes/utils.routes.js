@@ -10,13 +10,23 @@ module.exports = function (app, express, srcPath) {
   );
 
   app.use(
-    "/assets/scripts/utils/getGenreName.js",
-    express.static(srcPath + "utils/getGenreName.js")
+    "/assets/scripts/utils/getGenreList.js",
+    express.static(srcPath + "utils/getGenreList.js")
+  );
+
+  app.use(
+    "/assets/scripts/utils/getMovieById.js",
+    express.static(srcPath + "utils/getMovieById.js")
   );
 
   app.use(
     "/assets/scripts/utils/getWeather.js",
     express.static(srcPath + "utils/getWeather.js")
+  );
+
+  app.use(
+    "/assets/scripts/utils/urlContains.js",
+    express.static(srcPath + "utils/urlContains.js")
   );
 
   app.use(
