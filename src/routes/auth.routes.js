@@ -1,4 +1,4 @@
-const controller = require("../controllers/auth.controller");
+const authController = require("../controllers/auth.controller");
 const verifySignUp = require("../middlewares/verifySignUp");
 
 module.exports = function (app, express, srcPath) {
@@ -14,8 +14,8 @@ module.exports = function (app, express, srcPath) {
   app.post(
     "/auth/signup",
     [verifySignUp.checkDuplicateUsername],
-    controller.signup
+    authController.signup
   );
 
-  app.post("/auth/login", controller.login);
+  app.post("/auth/login", authController.login);
 };
