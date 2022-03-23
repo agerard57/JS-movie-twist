@@ -19,4 +19,6 @@ const verifySignUp = {
   checkDuplicateUsername,
 };
 
+// I exported that way as to eventually add more checks, if needed (e.g. password length check)
+
 module.exports = verifySignUp;

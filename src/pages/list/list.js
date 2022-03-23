@@ -52,3 +52,5 @@ else if (urlContains("genre")) {
     tabTitle.innerHTML = `MMDB - ${genreName}`;
   });
 }
+
+//TODO USE GET MOVIE BY ID
