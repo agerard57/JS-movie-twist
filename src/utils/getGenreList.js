@@ -17,7 +17,7 @@ const options = {
  * @return {Promise}          Returns the genre name in a promise.
  */
 
-export const getGenreName = (genreId) =>
+export const getGenreList = (genreId) =>
   new Promise((resolve) => {
     resolve(
       fetch(url, options)
@@ -30,3 +30,10 @@ export const getGenreName = (genreId) =>
         })
     );
   });
+
+// TODO MAKE THIS MORE GENERIC LIKE MOVIEBYID
+/* GET ALL GENRES 
+const filtered = genres.filter((genreFromList) =>
+  genre_ids.find((x) => x === genreFromList.id)
+).map(x=> x.name);
+ */

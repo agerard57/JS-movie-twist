@@ -1,6 +1,6 @@
 import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
-import { getGenreName } from "/assets/scripts/utils/getGenreName.js";
+import { getGenreList } from "/assets/scripts/utils/getGenreList.js";
 
 export const createMoviePage = (movie) => {
   // Poster
@@ -30,7 +30,7 @@ export const createMoviePage = (movie) => {
   // Genres
   const genres = document.querySelector("#genres-container");
   movie.genre_ids.forEach((element) => {
-    getGenreName(element).then((genreName) => {
+    getGenreList(element).then((genreName) => {
       const genresSpan = document.createElement("span");
       genresSpan.setAttribute("class", "badge bg-success");
       genresSpan.innerHTML = genreName;
