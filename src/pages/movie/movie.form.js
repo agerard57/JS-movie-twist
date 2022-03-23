@@ -10,10 +10,7 @@ const updateOverviewMsg = (target) => {
   inputOverviewMsg.innerHTML = `${currentLength} / ${maxLength}`;
 };
 
-if (urlContains("edit")) {
-  movieFormEdit();
-  updateOverviewMsg(inputOverview);
-}
+if (urlContains("edit")) movieFormEdit(updateOverviewMsg);
 
 inputOverview.addEventListener("input", (e) => {
   updateOverviewMsg(e.target);

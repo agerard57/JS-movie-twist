@@ -1,8 +1,8 @@
 import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
-import { getGenreList } from "/assets/scripts/utils/getGenreList.js";
+import { getRequest } from "/assets/scripts/utils/getRequest.js";
 
-export const createMoviePage = (movie) => {
+export const movieDisplayPage = (movie) => {
   // Poster
   const poster = document.querySelector("#poster");
   poster.src = formatImageUrl(movie.poster_path, "w342");
@@ -29,13 +29,17 @@ export const createMoviePage = (movie) => {
 
   // Genres
   const genres = document.querySelector("#genres-container");
-  movie.genre_ids.forEach((element) => {
-    getGenreList(element).then((genreName) => {
-      const genresSpan = document.createElement("span");
-      genresSpan.setAttribute("class", "badge bg-success");
-      genresSpan.innerHTML = genreName;
-      genres.appendChild(genresSpan);
-    });
+  movie.genre_ids.forEach((genreId) => {
+    getRequest(
+      "/data/genres",
+      (genre) => {
+        const genresSpan = document.createElement("span");
+        genresSpan.setAttribute("class", "badge bg-success");
+        genresSpan.innerHTML = genre.name;
+        genres.appendChild(genresSpan);
+      },
+      genreId
+    );
   });
   // Overview
   const overview = document.querySelector("#overview");

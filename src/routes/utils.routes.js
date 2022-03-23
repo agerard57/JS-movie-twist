@@ -10,13 +10,13 @@ module.exports = function (app, express, srcPath) {
   );
 
   app.use(
-    "/assets/scripts/utils/getGenreList.js",
-    express.static(srcPath + "utils/getGenreList.js")
+    "/assets/scripts/utils/getRequest.js",
+    express.static(srcPath + "utils/getRequest.js")
   );
 
   app.use(
-    "/assets/scripts/utils/getMovieById.js",
-    express.static(srcPath + "utils/getMovieById.js")
+    "/assets/scripts/utils/getIdFromUrl.js",
+    express.static(srcPath + "utils/getIdFromUrl.js")
   );
 
   app.use(
