@@ -11,7 +11,8 @@
     "mongoose": "^6.2.7",
     "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "serve-favicon": "^2.5.0"
   },
   "name": "js-my-movie-database",
   "description": "A JavaScript website about vanilla js, ajax, node, express and movies!",
@@ -65,6 +66,7 @@
     "mongoose": "^6.2.7",
     "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "serve-favicon": "^2.5.0"
   }
 }

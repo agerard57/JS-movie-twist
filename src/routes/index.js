@@ -1,4 +1,5 @@
 const express = require("express");
+const favicon = require("serve-favicon");
 const bodyParser = require("body-parser");
 const MoviesModel = require("../models/movies.model");
 
@@ -8,6 +9,7 @@ module.exports = function routes(app) {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(bodyParser.json());
+  app.use(favicon(srcPath + "assets/img/favicon.ico"));
 
   app.use("/assets", express.static(srcPath + "assets"));
 
