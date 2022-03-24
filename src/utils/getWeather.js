@@ -14,25 +14,41 @@ import { getUserData } from "/assets/scripts/utils/index.js";
  */
 
 export const getWeather = () => {
+  // POST that gets the weather infos
+  const postWeather = (queryString) =>
+    fetch("/data/weather", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: queryString,
+      }),
+    }).then((response) => response.json());
+
   const weather = document.querySelector("#weather");
 
   const storedUserCity = getUserData("city");
   const cityQuery = `q=${storedUserCity}`;
 
-  // Transforms the input into a readable format
-  const celcius = (temp) => Math.round(parseFloat(temp) - 273.15) + "°C";
+  const weatherDisplay = (data) => `
+        <img class="mx-auto d-block" src="http://openweathermap.org/img/wn/${
+          data.weather[0].icon
+        }.png" />
+        <span class="nav-link text-muted text-center">${data.name}  ${celcius(
+    data.main.temp
+  )}</span>`;
 
-  // Api URL vars
-  const baseApiUrl = "https://api.openweathermap.org/data/2.5/weather";
-  const apiKey = "******";
+  // Transforms the input into a readable format (in °C)
+  const celcius = (temp) => Math.round(parseFloat(temp) - 273.15) + "°C";
 
   // Geolocalisation functions
   const success = (pos) => {
     const coordinatesQuery = `lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`;
-    fetch(`${baseApiUrl}?appid=${apiKey}&${coordinatesQuery}`)
-      .then((resp) => resp.json())
+    postWeather(coordinatesQuery)
       .then((data) => {
-        weather.innerHTML = `${data.name}  ${celcius(data.main.temp)}`;
+        weather.innerHTML = weatherDisplay(data);
       })
       .catch(() => {
         weather.style.display = "none";
@@ -47,18 +63,8 @@ export const getWeather = () => {
 
   // Start of the "main part" of the function
   if (storedUserCity !== null)
-    fetch(`${baseApiUrl}?appid=${apiKey}&${cityQuery}`)
-      .then((resp) => resp.json())
-      .then((data) => {
-        weather.innerHTML = `
-        <img class="mx-auto d-block" src="http://openweathermap.org/img/wn/${
-          data.weather[0].icon
-        }.png" />
-        <span class="nav-link text-muted text-center">${getUserData(
-          "city"
-        )}  ${celcius(data.main.temp)}</span>
-        `;
-      })
+    postWeather(cityQuery)
+      .then((data) => (weather.innerHTML = weatherDisplay(data)))
       .catch(() => {
         navigator.geolocation.getCurrentPosition(
           success,
@@ -67,5 +73,3 @@ export const getWeather = () => {
         );
       });
 };
-
-//TODO IF {cod: "404", message: "city not found"}
