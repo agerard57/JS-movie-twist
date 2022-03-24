@@ -32,20 +32,27 @@ module.exports = function (app, express, srcPath) {
     res.sendFile(srcPath + "index.html");
   }); */
   app
-    .route("/movie/edit/:id") //TODO UTILS TO GET URL /
+    .route("/edit/:id") //TODO UTILS TO GET URL /
     .get((req, res) => {
       let id = req.params.id;
       res.sendFile(srcPath + "pages/movie/movie.form.html", { id: id });
     })
     .post(movieController.update);
 
-  app.delete("/movie/delete/:id", (req, res) => {
+  app.delete("/delete/:id", (req, res) => {
     let id = req.params.id;
     MoviesModel.deleteOne({ id: id }, (err) => {
       if (err) res.send(err);
       else res.send("Deleted");
     });
   });
+
+  app
+    .route("/add")
+    .get((req, res) => {
+      res.sendFile(srcPath + "pages/movie/movie.form.html");
+    })
+    .post(movieController.add);
 
   app.get("/id/:id", (req, res) => {
     let id = req.params.id;

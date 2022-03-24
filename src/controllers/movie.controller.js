@@ -1,5 +1,10 @@
 const MoviesModel = require("../models/movies.model");
 
+const genresArray = (genreList) => {
+  const isgenresAnArray = Array.isArray(genreList) ? genreList : [genreList];
+  return isgenresAnArray.map((x) => parseInt(x, 10));
+};
+
 exports.update = (req, res) => {
   /**
    * "req.body.genres" either gives out a single string or an array of strings.
@@ -10,12 +15,7 @@ exports.update = (req, res) => {
    * @return   {Number[]}            Gives an number array of genre(s) id(s) (numbers)
    */
 
-  const genresArray = (genreList) => {
-    const isgenresAnArray = Array.isArray(genreList) ? genreList : [genreList];
-    return isgenresAnArray.map((x) => parseInt(x, 10));
-  };
-
-  const update = {
+  const updateOptions = {
     title: req.body.title,
     original_title: req.body.originaltitle,
     genre_ids: genresArray(req.body.genres),
@@ -24,34 +24,40 @@ exports.update = (req, res) => {
     vote_average: req.body.avgvote,
     original_language: req.body.lang.toLowerCase(),
   };
-  const filter = { id: req.params.id };
+  const findById = { id: req.params.id };
 
-  MoviesModel.findOneAndUpdate(filter, update, (err, res) => {
-    if (err) res.status(500).send("ERROR");
+  MoviesModel.findOneAndUpdate(findById, updateOptions, (err, res) => {
+    if (err)
+      res.redirect(
+        "/movie/add/?msg=500"
+      ); /* res.status(500).send("ERROR") ; //TODO */
   });
-  res.redirect("/list?msg=updated&msg=200");
+  /*   res.status(200).send("Updated");
+   */ res.redirect("/list?msg=200"); //TODO
 
   // TODO Alert Hander
   // TODO Modal Handler
 };
 
-/* exports.save = (req, res) => {
-  const user = new UsersModel({
-    title: req.body.username,
-    original-title: bcrypt.hashSync(req.body.password1, 8),
-    genres: req.body.city,
-    overview: req.body.type,
-    release-date
-    vote-avg
-  });
+exports.add = (req, res) => {
+  const addOptions = {
+    title: req.body.title,
+    original_title: req.body.originaltitle,
+    genre_ids: genresArray(req.body.genres),
+    overview: req.body.overview,
+    release_date: req.body.releasedate,
+    vote_average: req.body.avgvote,
+    original_language: req.body.lang.toLowerCase(),
+  };
 
-  user.save((err, user) => {
+  const movie = new MoviesModel(addOptions);
+
+  movie.save((err, movie) => {
     if (err) {
       res.redirect("/login?msg=500");
       return;
     }
-    var username = encodeURIComponent(user.username);
-    res.redirect(`/login?msg=created&user=${username}`);
+    const movieName = encodeURIComponent(movie.title);
+    res.redirect(`/login?msg=created&movie=${movieName}`);
   });
 };
- */
