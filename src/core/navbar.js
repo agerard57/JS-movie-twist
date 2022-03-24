@@ -96,7 +96,7 @@ searchBar.addEventListener("keyup", () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title: searchBarValue }),
+        body: JSON.stringify({ searchQuery: searchBarValue }),
       });
       const content = await rawResponse.json();
       searchResults.innerHTML = content.response;

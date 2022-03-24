@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const placeholderPosterUrl =
   "https://critics.io/img/movies/poster-placeholder.png";
-const placeholderBackdrop =
+const placeholderBackdropUrl =
   "http://placehold.jp/1c1c1c/ffffff/1920x1080.png?text=Beautiful%20background";
 //TODO
 var movieSchema = mongoose.Schema(
   {
-    backdrop_path: { type: String, default: placeholderBackdrop },
+    backdrop_path: { type: String, default: placeholderBackdropUrl },
     genre_ids: { type: Array, required: true },
-    id: { type: Number },
+    id: { type: Number, default: Date.now() },
     original_language: {
       type: String,
       required: true,
@@ -17,7 +17,7 @@ var movieSchema = mongoose.Schema(
     original_title: { type: String, required: true },
     overview: { type: String, required: true },
     popularity: { type: Number },
-    poster_path: { type: String },
+    poster_path: { type: String, default: placeholderPosterUrl },
     release_date: { type: String, required: true },
     title: { type: String, required: true },
     vote_average: { type: Number },

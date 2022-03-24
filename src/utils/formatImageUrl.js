@@ -1,5 +1,7 @@
 /**
- * Format the imgaes given by the database.
+ * Checks if the path is a slug and format it.
+ *
+ * If it isn't a slug, assume it's a link and only return the link.
  *
  * @module utils
  * @param {String}           path Is the image path fed by the database.
@@ -8,8 +10,13 @@
  */
 
 export const formatImageUrl = (path, size) => {
-  const baseUrl = "https://image.tmdb.org/t/p/";
-  return baseUrl + size + path;
+  const pathIsSlug = path.startsWith("/");
+
+  if (pathIsSlug) {
+    const baseUrl = "https://image.tmdb.org/t/p/";
+    return baseUrl + size + path;
+  }
+  return path;
 };
 
 /*

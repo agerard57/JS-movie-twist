@@ -1,4 +1,4 @@
-import { isUserAdmin } from "/assets/scripts/utils/userDataStorage.js";
+import { isUserAdmin } from "/assets/scripts/utils/index.js";
 
 export const adminButtons = (card, element) => {
   if (isUserAdmin) {
@@ -31,7 +31,7 @@ export const adminButtons = (card, element) => {
 
     // event listeners
     editSvgDiv.addEventListener("click", () => {
-      window.location.href = `/movie/edit/${element.id}`;
+      window.location.href = `/edit/${element.id}`;
     });
 
     trashSvgDiv.addEventListener("click", () => {
@@ -44,7 +44,7 @@ export const adminButtons = (card, element) => {
       document.querySelector("#delete-button").addEventListener("click", () => {
         card.remove();
         (async () => {
-          await fetch(`/movie/delete/${element.id}`, { method: "DELETE" });
+          await fetch(`/delete/${element.id}`, { method: "DELETE" });
         })();
         document.querySelector("#modal").style.display = "none";
       });

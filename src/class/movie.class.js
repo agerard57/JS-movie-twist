@@ -70,10 +70,10 @@ export class Movie {
 
   // originalLanguage
   get originalLanguage() {
-    return this._originalLanguage;
+    return this._originalLanguage.toUpperCase();
   }
   set originalLanguage(tmp) {
-    this._originalLanguage = tmp;
+    this._originalLanguage = tmp.toLowerCase();
   }
 
   // originalTitle
