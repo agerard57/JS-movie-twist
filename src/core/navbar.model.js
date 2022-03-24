@@ -16,19 +16,20 @@ export const navbar = `
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
+              <a id="home-a" class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/list">List</a>
+              <a class="nav-link" href="/list" id="list-a">List</a>
             </li>
             <li class="nav-item dropdown">
               <a
+                id="genre-a"
                 class="nav-link dropdown-toggle"
                 href="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                aria-expanded="false" 
               >
                 Genre
               </a>
@@ -50,7 +51,7 @@ export const navbar = `
             <li class="nav-item"></li>
           </ul>
           <div id="span-wrapper">
-            <span id="weather" class=" text-muted">
+            <span id="weather" class="text-muted">
             </span>
             <span class="nav-link text-muted text-center  d-none d-md-block">|</span>
             <span id="connected-as" class="nav-link text-muted text-center">
