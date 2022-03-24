@@ -1,5 +1,6 @@
 import { navbar } from "/assets/scripts/navbar.model.js";
 import { getWeather } from "/assets/scripts/utils/getWeather.js";
+import { urlContains } from "/assets/scripts/utils/urlContains.js";
 import {
   deleteUserData,
   getUserData,
@@ -61,7 +62,7 @@ const loggedNavbarFeatures = () => {
     deleteUserData();
   });
   addMovieBtn.addEventListener("click", () => {
-    window.location.href = "/movie/add";
+    window.location.href = "/add";
   });
 };
 const notLoggedNavbarFeatures = () => {
@@ -81,6 +82,7 @@ else addMovieBtn.style.display = "none";
 
 const searchBar = document.querySelector("#search-bar");
 const searchResults = document.querySelector("#live-search");
+
 searchBar.addEventListener("keyup", () => {
   const searchBarValue = searchBar.value;
   if (searchBarValue.length === 0) searchResults.classList.add("hide");
@@ -101,3 +103,19 @@ searchBar.addEventListener("keyup", () => {
     })();
   }
 });
+
+const homeA = document.querySelector("#home-a");
+const listA = document.querySelector("#list-a");
+const genreA = document.querySelector("#genre-a");
+
+// Home
+if (location.pathname === "/") homeA.setAttribute("class", "nav-link active");
+// List page
+if (urlContains("list")) listA.setAttribute("class", "nav-link active");
+// Genres pages
+if (urlContains("genre"))
+  genreA.setAttribute("class", "nav-link dropdown-toggle active");
+// Movie form page
+if (urlContains("add") || urlContains("edit")) addMovieBtn.disabled = true;
+// Signup / Login page
+if (urlContains("login")) authBtn.disabled = true;
