@@ -1,7 +1,9 @@
 import { createCard } from "/assets/scripts/list/createCard.model.js";
-import { getIdFromUrl } from "/assets/scripts/utils/getIdFromUrl.js";
-import { getRequest } from "/assets/scripts/utils/getRequest.js";
-import { urlContains } from "/assets/scripts/utils/urlContains.js";
+import {
+  getIdFromUrl,
+  getRequest,
+  urlContains,
+} from "/assets/scripts/utils/index.js";
 
 const moviesUrl = "/data/movies";
 const genresUrl = "/data/genres";

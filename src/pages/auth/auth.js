@@ -1,4 +1,4 @@
-import { isUserLogged } from "/assets/scripts/utils/userDataStorage.js";
+import { isUserLogged } from "/assets/scripts/utils/index.js";
 
 const qs = new URLSearchParams(window.location.search);
 const radioButtons = document.querySelectorAll("input[name='btnradio']");

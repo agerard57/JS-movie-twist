@@ -1,6 +1,5 @@
 import { movieDisplayPage } from "/assets/scripts/movie/movie.model.js";
-import { getIdFromUrl } from "/assets/scripts/utils/getIdFromUrl.js";
-import { getRequest } from "/assets/scripts/utils/getRequest.js";
+import { getIdFromUrl, getRequest } from "/assets/scripts/utils/index.js";
 
 getRequest(
   "/data/movies",

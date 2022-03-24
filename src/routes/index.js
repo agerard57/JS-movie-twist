@@ -20,7 +20,8 @@ module.exports = function routes(app) {
   require("./list.routes")(app, express, srcPath);
   require("./models.routes")(router);
   require("./movie.routes")(app, express, srcPath);
-  require("./utils.routes")(app, express, srcPath);
+
+  app.use("/assets/scripts/utils", express.static(srcPath + "utils"));
 
   //TODO CLEAN THIS MESS
   app

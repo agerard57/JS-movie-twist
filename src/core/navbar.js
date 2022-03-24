@@ -1,12 +1,12 @@
 import { navbar } from "/assets/scripts/navbar.model.js";
-import { getWeather } from "/assets/scripts/utils/getWeather.js";
-import { urlContains } from "/assets/scripts/utils/urlContains.js";
 import {
   deleteUserData,
   getUserData,
+  getWeather,
   isUserAdmin,
   isUserLogged,
-} from "/assets/scripts/utils/userDataStorage.js";
+  urlContains,
+} from "/assets/scripts/utils/index.js";
 
 const newHeader = new Headers();
 const url = "/data/genres";

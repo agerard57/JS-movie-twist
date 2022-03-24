@@ -1,6 +1,8 @@
-import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
-import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
-import { getRequest } from "/assets/scripts/utils/getRequest.js";
+import {
+  formatImageUrl,
+  formatReleaseDate,
+  getRequest,
+} from "/assets/scripts/utils/index.js";
 
 export const movieDisplayPage = (movie) => {
   // Poster

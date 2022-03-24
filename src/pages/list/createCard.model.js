@@ -1,6 +1,8 @@
 import { adminButtons } from "/assets/scripts/list/adminButtons.model.js";
-import { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
-import { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
+import {
+  formatImageUrl,
+  formatReleaseDate,
+} from "/assets/scripts/utils/index.js";
 
 const cards = document.querySelector("#cards");
 

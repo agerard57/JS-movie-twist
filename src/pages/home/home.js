@@ -2,7 +2,7 @@ import {
   getUserData,
   storeUserData,
   isUserLogged,
-} from "/assets/scripts/utils/userDataStorage.js";
+} from "/assets/scripts/utils/index.js";
 
 const pageTitle = document.querySelector("#page-title");
 const authBtn = document.querySelector("#auth-button");

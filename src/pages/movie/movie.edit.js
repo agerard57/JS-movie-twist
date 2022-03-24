@@ -1,5 +1,4 @@
-import { getIdFromUrl } from "/assets/scripts/utils/getIdFromUrl.js";
-import { getRequest } from "/assets/scripts/utils/getRequest.js";
+import { getIdFromUrl, getRequest } from "/assets/scripts/utils/index.js";
 
 const inputTitle = document.querySelector("#title");
 const inputOriginalTitle = document.querySelector("#originaltitle");
@@ -17,10 +16,12 @@ export const movieFormEdit = (updateOverviewMsg) => {
   getRequest(
     "/data/movies",
     (movie) => {
+      // Change titles
       pageTitle.innerHTML = updateText;
       formBtn.innerHTML = updateText;
       tabTitle.innerHTML = `MMDB - ${updateText}`;
 
+      // Populates the page
       inputTitle.value = movie.title;
       inputOriginalTitle.value = movie.original_title;
       inputReleaseDate.value = movie.release_date;
@@ -28,6 +29,7 @@ export const movieFormEdit = (updateOverviewMsg) => {
       inputLang.value = movie.original_language.toUpperCase();
       inputOverview.value = movie.overview;
 
+      // Adds the genre list
       const genresGroup = document.createElement("optgroup");
       genresGroup.setAttribute("id", "genres-list");
       genresGroup.setAttribute("label", "GENRES");
@@ -51,6 +53,6 @@ export const movieFormEdit = (updateOverviewMsg) => {
 
       inputGenre.appendChild(genresGroup);
     },
-    getIdFromUrl
+    getIdFromUrl // Select the movie
   );
 };

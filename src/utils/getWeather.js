@@ -1,4 +1,4 @@
-import { getUserData } from "/assets/scripts/utils/userDataStorage.js";
+import { getUserData } from "/assets/scripts/utils/index.js";
 
 /**
  * Displays the city and the temperature (in celcius) of the user.
