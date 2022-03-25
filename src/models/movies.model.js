@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+
 const placeholderPosterUrl =
   "https://critics.io/img/movies/poster-placeholder.png";
 const placeholderBackdropUrl =
   "http://placehold.jp/1c1c1c/ffffff/1920x1080.png?text=Beautiful%20background";
-//TODO
+
 var movieSchema = mongoose.Schema(
   {
     backdrop_path: { type: String, default: placeholderBackdropUrl },

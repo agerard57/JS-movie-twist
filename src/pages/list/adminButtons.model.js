@@ -1,13 +1,14 @@
 import { isUserAdmin } from "/assets/scripts/utils/index.js";
 
 export const adminButtons = (card, element) => {
+  // Check if user is admin
   if (isUserAdmin) {
-    // buttons div
+    // Buttons div
     const buttonsDiv = document.createElement("div");
     buttonsDiv.setAttribute("id", "buttons-div");
     buttonsDiv.setAttribute("class", "position-absolute top-0 end-0");
 
-    // edit svg
+    // Edit svg
     const editSvgDiv = document.createElement("div");
     editSvgDiv.setAttribute("id", "edit-svg");
     const editSvg = `
@@ -17,7 +18,7 @@ export const adminButtons = (card, element) => {
     editSvgDiv.innerHTML = editSvg;
     buttonsDiv.appendChild(editSvgDiv);
 
-    // trash svg
+    // Trash svg
     const trashSvgDiv = document.createElement("div");
     trashSvgDiv.setAttribute("id", "trash-svg");
     const trashSvg = `
@@ -29,11 +30,12 @@ export const adminButtons = (card, element) => {
 
     card.appendChild(buttonsDiv);
 
-    // event listeners
+    // Redirection for the edit page
     editSvgDiv.addEventListener("click", () => {
       window.location.href = `/edit/${element.id}`;
     });
 
+    // Delete modal
     trashSvgDiv.addEventListener("click", () => {
       document.querySelector("#modal").style.display = "inherit";
 
@@ -41,6 +43,7 @@ export const adminButtons = (card, element) => {
         "#delete-message"
       ).innerHTML = `Do you really want to delete ${element.title}?`;
 
+      // On delete confirmation click
       document.querySelector("#delete-button").addEventListener("click", () => {
         card.remove();
         (async () => {
@@ -49,6 +52,7 @@ export const adminButtons = (card, element) => {
         document.querySelector("#modal").style.display = "none";
       });
 
+      // Closing the modal
       document.querySelectorAll(".close-modal").forEach((item) => {
         item.addEventListener("click", () => {
           document.querySelector("#modal").style.display = "none";
@@ -57,4 +61,3 @@ export const adminButtons = (card, element) => {
     });
   }
 };
-//TODO Maybe clean this up a bit, heh?
