@@ -1,4 +1,4 @@
-import { movieFormEdit } from "/assets/scripts/movie/movie.edit.js";
+import { movieFormEdit } from "/assets/scripts/movieForm/movie.edit.js";
 import { getRequest, urlContains } from "/assets/scripts/utils/index.js";
 
 const inputOverview = document.querySelector("#overview");

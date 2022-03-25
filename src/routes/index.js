@@ -25,6 +25,7 @@ module.exports = function routes(app) {
   require("./home.routes")(app, express, router, srcPath);
   require("./list.routes")(app, express, srcPath);
   require("./movie.routes")(app, express, srcPath);
+  require("./movie.form.routes")(app, express, srcPath);
 
   // //////
   // Utils
