@@ -53,8 +53,10 @@
         class="form-control"
         name="username"
         placeholder="* Username"
-        required
         autofocus=""
+        maxlength="30"
+        minlength="5"
+        required
       />
       <label for="password1" class="sr-only">Password</label>
       <input
@@ -63,6 +65,8 @@
         class="form-control"
         name="password1"
         placeholder="* Password"
+        maxlength="30"
+        minlength="5"
         required
       />
       <label for="city" class="sr-only">City</label>
@@ -102,6 +106,8 @@
         placeholder="* Username"
         required=""
         name="inputLoginUsername"
+        maxlength="30"
+        minlength="5"
         autofocus=""
       />
       <label for="inputLoginPassword" class="sr-only">Password</label>
@@ -111,6 +117,8 @@
         id="inputLoginPassword"
         class="form-control"
         placeholder="* Password"
+        maxlength="30"
+        minlength="5"
         required=""
       />
       <div class="checkbox mb-3">
@@ -127,6 +135,7 @@
     <p class="mt-5 mb-3 text-muted">@agerard57 - 2022</p>
 
     <script type="module" src="/assets/scripts/auth/auth.js"></script>
+    <script type="module" src="/assets/scripts/loggedMessage.js"></script>
     <script type="module" src="/assets/scripts/navbar.js"></script>
   </body>
 </html>

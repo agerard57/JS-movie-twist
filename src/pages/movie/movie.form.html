@@ -25,7 +25,7 @@
       <div class="row inline form-group g-3 space">
         <div class="form-group g-3 col-6">
           <div class="col-auto">
-            <label for="title" class="form-label">Title:</label>
+            <label for="title" class="form-label">* Title:</label>
           </div>
           <div class="col-auto">
             <input
@@ -40,7 +40,7 @@
         <div class="form-group g-3 col-6">
           <div class="col-auto">
             <label for="originaltitle" class="form-label"
-              >Original title:</label
+              >* Original title:</label
             >
           </div>
           <div class="col-auto">
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="col-12 form-group g-3 space">
-        <label for="genres" class="form-label">Genres:</label>
+        <label for="genres" class="form-label">* Genres:</label>
         <select
           name="genres"
           id="genres"
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="col-12 form-group g-3 space">
-        <label for="overview" class="form-label">Overview:</label>
+        <label for="overview" class="form-label">* Overview:</label>
         <textarea
           class="form-control"
           id="overview"
@@ -83,7 +83,7 @@
       <div class="row g-3 align-items-center inline space">
         <div class="form-group g-3 col-auto">
           <div class="col-auto">
-            <label for="releasedate" class="form-label">Release date:</label>
+            <label for="releasedate" class="form-label">* Release date:</label>
           </div>
           <div class="col-auto">
             <input
@@ -101,7 +101,7 @@
         </div>
         <div class="form-group g-3 col-auto">
           <div class="col-auto">
-            <label for="avgvote" class="form-label">Global note:</label>
+            <label for="avgvote" class="form-label">* Global note:</label>
           </div>
           <input
             type="number"
@@ -118,7 +118,7 @@
         </div>
         <div class="form-group g-3 col-auto">
           <div class="col-auto">
-            <label for="lang" class="form-label">Country:</label>
+            <label for="lang" class="form-label">* Country:</label>
           </div>
           <div class="col-auto">
             <input size="6" maxlength="2" name="lang" id="lang" required />
@@ -138,6 +138,10 @@
         </button>
       </div>
     </form>
+    <footer class="text-center">
+      <p class="mt-5 mb-3 text-danger">* Required</p>
+      <p class="mt-5 mb-3 text-muted">@agerard57 - 2022</p>
+    </footer>
     <script type="module" src="/assets/scripts/movie/movie.form.js"></script>
     <script type="module" src="/assets/scripts/navbar.js"></script>
   </body>
