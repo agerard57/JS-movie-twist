@@ -61,9 +61,9 @@ Here are some of the main features of this WebApp:
 Nothing much going on on a technical level, however, when connected, the sign up
 button will go away and the name of the used be displayed
 
-| **Add**                                                                                                         | **Edit**                                                                                                        |
+| **Not logged**                                                                                                   | **Logged**                                                                                                        |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| ![image](https://user-images.githubusercontent.com/56207146/160181704-ea8fce76-739b-4ed6-ad45-bf1dd6d6245f.png) | ![image](https://user-images.githubusercontent.com/56207146/160181601-2184ec2e-d520-4eaf-9252-52c5cfe940d2.png) |
+| ![image](https://user-images.githubusercontent.com/56207146/160183474-097fbd49-dd27-4c6e-88bd-6e4b2e0cdf95.png) | ![image](https://user-images.githubusercontent.com/56207146/160183541-a925fb03-e809-4fdf-b289-dd4530537d10.png) |
 
 #### Navbar
 
@@ -202,7 +202,7 @@ serve-favicon ^2.5.0:
 
 ### Project tree
 
-```json
+```tree
 📦 ROOT
 ├─ .env
 ├─ .eslintrc.yaml
