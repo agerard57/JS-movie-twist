@@ -28,15 +28,11 @@ exports.update = (req, res) => {
 
   MoviesModel.findOneAndUpdate(findById, updateOptions, (err, res) => {
     if (err)
-      res.redirect(
-        "/movie/add/?msg=500"
-      ); /* res.status(500).send("ERROR") ; //TODO */
+      /* res.status(500).send("ERROR") */
+      res.redirect("/movie/add/?msg=500");
   });
-  /*   res.status(200).send("Updated");
-   */ res.redirect("/list?msg=200"); //TODO
-
-  // TODO Alert Hander
-  // TODO Modal Handler
+  /* res.status(200).send("Updated") */
+  res.redirect("/list?success=updated");
 };
 
 exports.add = (req, res) => {
@@ -54,11 +50,11 @@ exports.add = (req, res) => {
 
   movie.save((err, movie) => {
     if (err) {
-      res.redirect("/login?msg=500");
+      res.redirect("/list?msg=500");
       return;
     }
     const movieName = encodeURIComponent(movie.title);
-    res.redirect(`/login?msg=created&movie=${movieName}`);
+    res.redirect(`/list?success=added&subject=${movieName}`);
   });
 };
 

@@ -15,7 +15,7 @@ exports.signup = (req, res) => {
       return;
     }
     var username = encodeURIComponent(user.username);
-    res.redirect(`/login?msg=created&user=${username}`);
+    res.redirect(`/login?success=added&subject=${username}`);
   });
 };
 

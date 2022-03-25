@@ -1,3 +1,4 @@
+export { alertHandler } from "/assets/scripts/utils/alertMessages.js";
 export { formatImageUrl } from "/assets/scripts/utils/formatImageUrl.js";
 export { formatReleaseDate } from "/assets/scripts/utils/formatReleaseDate.js";
 export { getIdFromUrl } from "/assets/scripts/utils/getIdFromUrl.js";
