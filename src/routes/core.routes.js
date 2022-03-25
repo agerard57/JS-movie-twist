@@ -12,6 +12,11 @@ module.exports = function (app, express, srcPath) {
     express.static(srcPath + "core/navbar.model.js")
   );
 
+  app.use(
+    "/assets/scripts/loggedMessage.js",
+    express.static(srcPath + "core/loggedMessage.js")
+  );
+
   // POST - Search bar
   app.post("/search", searchController);
 };
