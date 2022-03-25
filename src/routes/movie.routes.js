@@ -6,7 +6,7 @@ module.exports = function (app, express, srcPath) {
 
   // GET with id - Single movie page
   app.get("/movie/:id", (req, res) => {
-    let id = req.params.id;
+    const id = req.params.id;
     res.sendFile(srcPath + "pages/movie/movie.html", { id: id });
   });
 

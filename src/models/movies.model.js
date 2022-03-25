@@ -5,7 +5,7 @@ const placeholderPosterUrl =
 const placeholderBackdropUrl =
   "http://placehold.jp/1c1c1c/ffffff/1920x1080.png?text=Beautiful%20background";
 
-var movieSchema = mongoose.Schema(
+const movieSchema = mongoose.Schema(
   {
     backdrop_path: { type: String, default: placeholderBackdropUrl },
     genre_ids: { type: Array, required: true },
@@ -29,6 +29,6 @@ var movieSchema = mongoose.Schema(
 
 movieSchema.index({ id: 1 }, { unique: true });
 
-var MoviesModel = mongoose.model("movies", movieSchema);
+const MoviesModel = mongoose.model("movies", movieSchema);
 
 module.exports = MoviesModel;

@@ -1,5 +1,5 @@
 const UsersModel = require("../models/users.model");
-var bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
   const user = new UsersModel({
@@ -14,7 +14,7 @@ exports.signup = (req, res) => {
       res.redirect("/login?msg=500");
       return;
     }
-    var username = encodeURIComponent(user.username);
+    const username = encodeURIComponent(user.username);
     res.redirect(`/login?success=added&subject=${username}`);
   });
 };
@@ -29,15 +29,15 @@ exports.login = (req, res) => {
     }
     if (!user) return res.redirect("/login?msg=username");
 
-    var passwordIsValid = bcrypt.compareSync(
+    const passwordIsValid = bcrypt.compareSync(
       req.body.inputLoginPassword,
       user.password
     );
     if (!passwordIsValid) return res.redirect("/login?msg=password");
 
-    var username = encodeURIComponent(user.username);
-    var city = encodeURIComponent(user.city);
-    var type = encodeURIComponent(user.type);
+    const username = encodeURIComponent(user.username);
+    const city = encodeURIComponent(user.city);
+    const type = encodeURIComponent(user.type);
     const remember =
       req.body.remember === "remember-me"
         ? encodeURIComponent("true")

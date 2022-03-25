@@ -9,7 +9,7 @@ module.exports = function (app, express, srcPath) {
 
   // GET with id - List page by genre
   app.get("/genre/:id", (req, res) => {
-    let id = req.params.id;
+    const id = req.params.id;
     res.sendFile(srcPath + "pages/list/list.html", { id: id });
   });
 };

@@ -15,6 +15,6 @@ userSchema.index({ username: 1 }, { unique: true });
 
 userSchema.plugin(uniqueValidator);
 
-var UsersModel = mongoose.model("users", userSchema);
+const UsersModel = mongoose.model("users", userSchema);
 
 module.exports = UsersModel;
