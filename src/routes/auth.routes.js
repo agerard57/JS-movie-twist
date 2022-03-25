@@ -16,7 +16,11 @@ module.exports = function (app, express, srcPath) {
   // POST - On signup
   app.post(
     "/auth/signup",
-    [verifySignUp.checkDuplicateUsername],
+    [
+      verifySignUp.checkDuplicateUser,
+      verifySignUp.checkUsername,
+      verifySignUp.checkPassword,
+    ],
     authController.signup
   );
 
