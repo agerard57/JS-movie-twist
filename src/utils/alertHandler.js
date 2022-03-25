@@ -26,6 +26,8 @@ const alertMessagesList = {
 
   passwordEmpty: "Password field empty!",
 
+  updated: "Added!\nYour movie has been updated successfully",
+
   username: `User "${subject}"not found!`,
 
   usernameLength: "Username must be between 5 and 30 characters!",

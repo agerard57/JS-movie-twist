@@ -1,5 +1,6 @@
 import { createCard } from "/assets/scripts/list/createCard.model.js";
 import {
+  alertHandler,
   getIdFromUrl,
   getRequest,
   urlContains,
@@ -34,3 +35,5 @@ else if (urlContains("genre")) {
     getIdFromUrl
   );
 }
+
+alertHandler();
