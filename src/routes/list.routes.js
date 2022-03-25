@@ -1,23 +1,13 @@
 module.exports = function (app, express, srcPath) {
+  // Load scripts
+  app.use("/assets/scripts/list", express.static(srcPath + "pages/list"));
+
+  // GET - Movie list page
   app.get("/list", (_req, res) => {
     res.sendFile(srcPath + "pages/list/list.html");
   });
 
-  app.use(
-    "/assets/scripts/list/list.js",
-    express.static(srcPath + "pages/list/list.js")
-  );
-
-  app.use(
-    "/assets/scripts/list/createCard.model.js",
-    express.static(srcPath + "pages/list/createCard.model.js")
-  );
-
-  app.use(
-    "/assets/scripts/list/adminButtons.model.js",
-    express.static(srcPath + "pages/list/adminButtons.model.js")
-  );
-
+  // GET with id - List page by genre
   app.get("/genre/:id", (req, res) => {
     let id = req.params.id;
     res.sendFile(srcPath + "pages/list/list.html", { id: id });

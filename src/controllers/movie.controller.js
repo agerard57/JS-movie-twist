@@ -61,3 +61,11 @@ exports.add = (req, res) => {
     res.redirect(`/login?msg=created&movie=${movieName}`);
   });
 };
+
+exports.delete = (req, res) => {
+  let id = req.params.id;
+  MoviesModel.deleteOne({ id: id }, (err) => {
+    if (err) res.send(err);
+    else res.send("Deleted");
+  });
+};
