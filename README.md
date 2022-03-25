@@ -61,7 +61,7 @@ Here are some of the main features of this WebApp:
 Nothing much going on on a technical level, however, when connected, the sign up
 button will go away and the name of the used be displayed
 
-| **Not logged**                                                                                                   | **Logged**                                                                                                        |
+| **Not logged**                                                                                                  | **Logged**                                                                                                      |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ![image](https://user-images.githubusercontent.com/56207146/160183474-097fbd49-dd27-4c6e-88bd-6e4b2e0cdf95.png) | ![image](https://user-images.githubusercontent.com/56207146/160183541-a925fb03-e809-4fdf-b289-dd4530537d10.png) |
 
