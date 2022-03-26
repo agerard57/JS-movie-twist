@@ -4,6 +4,24 @@
 
 ## Table of Contents
 
+- [JS_my-movie-database](#js_my-movie-database)
+  - [Table of Contents](#table-of-contents)
+  - [Starting the project](#starting-the-project)
+    - [Downloading and running the project](#downloading-and-running-the-project)
+      - [Setup the automatic project launch](#setup-the-automatic-project-launch)
+      - [Manual project launch](#manual-project-launch)
+  - [Project](#project)
+    - [Project features](#project-features)
+      - [Home page](#home-page)
+      - [Navbar](#navbar)
+      - [Sign up / Login page](#sign-up--login-page)
+      - [List page](#list-page)
+      - [Genre page](#genre-page)
+      - [Movie page](#movie-page)
+      - [Add / Edit movie](#add--edit-movie)
+    - [Project dependencies](#project-dependencies)
+    - [Project tree](#project-tree)
+
 ## Starting the project
 
 ### Downloading and running the project
@@ -11,7 +29,7 @@
 - Clone / Download this project
 - Open _Visual Studio Code_
 - Open a CLI and install the dependencies with `npm run init`
-- In root, rename the `.example.env` file into `.env` and fill out the keys.
+- In root, rename the `.example.env` file into `.env` and fill in the keys.
 
 ![image](https://user-images.githubusercontent.com/56207146/160180194-b43157ea-7a6e-4faf-8863-021dc2a38583.png)
 
@@ -38,7 +56,7 @@ done once
 - A terminal will open and run the command. On this point onwards, each time
   you open the workshop, the task will automatically run.
 
-> :information_source: A prompt might ask your authorisation to accept or deny
+> :information_source: A prompt might ask your authorization to accept or deny
 > the automatic launch.
 
 #### Manual project launch
@@ -69,7 +87,7 @@ button will go away and the name of the used be displayed
 
 The navbar changes drastically when connected. It will display the username,
 the weather (with a picture and with degrees °C) and the logout button.
-It will also display a "Add movie button" if the user is an admin.
+It will also display a "Add movie" button if the user is an admin.
 
 > Note that the weather will be that of the user's city on sign up.
 > If the user's city isn't found, the website will ask the user's location.
@@ -88,13 +106,13 @@ The results will appear "live", however, at this time, no search page exists.
 
 ![image](https://user-images.githubusercontent.com/56207146/160180920-66f17f7c-e867-461d-b4e9-bfad5276aaa7.png)
 
-#### Signup / Login page
+#### Sign up / Login page
 
-This page signs up and loggs the user.
+This page signs up and logs the user.
 Using localStorage and sessionStorage, we can store data to remember
 or not his login.
 
-| **Signup**                                                                                                      | **Login**                                                                                                       |
+| **Sign up**                                                                                                     | **Login**                                                                                                       |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ![image](https://user-images.githubusercontent.com/56207146/160181170-be1fb549-961f-48e0-a27f-57bd078380c2.png) | ![image](https://user-images.githubusercontent.com/56207146/160181184-104efc24-a177-4c2f-85df-b9919f767224.png) |
 
@@ -112,12 +130,12 @@ If the logged user is an admin, on each card will be the edit and delete buttons
 
 ![image](https://user-images.githubusercontent.com/56207146/160181409-7c79f542-1525-4642-a14e-e4763ab83776.png)
 
-- On edit, it will redirect the user to the movie form page
-- On delete, a modal will appear asking you
+- On clicking the pen, it will redirect the user to the movie form page
+- On the trash bin, a modal will appear asking you confirmation for deletion.
 
 #### Genre page
 
-Same principle than the "list page", hovewer it only displays the
+Same principle than the "list page", however it only displays the
 movies with the genre required.
 
 ![image](https://user-images.githubusercontent.com/56207146/160181438-6c75e5f8-7d45-4a2a-9670-f249ff3642a7.png)

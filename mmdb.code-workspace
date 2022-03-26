@@ -32,6 +32,7 @@
   "extensions": {
     "recommendations": [
       "christian-kohler.npm-intellisense",
+      "cSpell.words",
       "davidanson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
