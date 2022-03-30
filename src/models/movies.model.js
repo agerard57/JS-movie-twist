@@ -9,7 +9,7 @@ const movieSchema = mongoose.Schema(
   {
     backdrop_path: { type: String, default: placeholderBackdropUrl },
     genre_ids: { type: Array, required: true },
-    id: { type: Number, default: Date.now() }, // Date.now as id is a clever way to se unique identifiers
+    id: { type: Number, default: Date.now }, // Date.now as id is a clever way to set unique identifiers
     original_language: {
       type: String,
       required: true,
